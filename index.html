@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariñas Taller Automotriz - Chapa, Pintura y Mecánica</title>
+    <meta name="description" content="Más de 20 años de experiencia en pintura, chapa y reparaciones mecánicas. Confianza, rapidez y soluciones a medida para tu vehículo.">
+    <meta name="keywords" content="taller automotriz, chapa y pintura, mecánica general, reparación de autos, taller de confianza">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #B0B0B0;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://placehold.co/1920x1080/121212/ffffff?text=Taller+Profesional');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gallery-item {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(229, 57, 53, 0.2), 0 4px 6px -2px rgba(229, 57, 53, 0.1);
+        }
+        .map-dark {
+            filter: invert(95%) hue-rotate(180deg) contrast(0.9);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(229, 57, 53, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="bg-[#1a1a1a]/80 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-zinc-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Mariñas <span class="text-[#E53935]">Taller Automotriz</span></a>
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/541171091304" target="_blank" class="text-2xl text-green-500 hover:text-green-400 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/MarinasTallerAutomotriz" target="_blank" class="text-2xl text-pink-500 hover:text-pink-400 transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Inicio (Hero) -->
+        <section id="inicio" class="hero-bg text-white min-h-screen flex items-center justify-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Mariñas Taller Automotriz</h1>
+                <h2 class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-[#B0B0B0]">Más de 20 años de experiencia en pintura, chapa y reparaciones mecánicas.</h2>
+                <a href="https://wa.me/541171091304?text=Hola,%20quisiera%20hacer%20una%20consulta%20para%20mi%20auto." target="_blank" class="cta-button bg-[#E53935] text-white font-bold py-3 px-8 rounded-lg text-lg inline-flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Consultar Ahora
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Nosotros -->
+        <section id="nosotros" class="py-20 bg-[#1a1a1a]">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Confianza y Calidad Familiar</h2>
+                <p class="text-lg text-[#B0B0B0] mb-8">Con más de 20 años trabajando en la industria automotriz, ofrecemos servicios de pintura, chapa y reparación de vehículos. Somos un taller familiar que garantiza confianza y calidad en cada trabajo.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-[#212121] p-6 rounded-lg border border-zinc-800">
+                        <h3 class="text-xl font-bold text-white mb-2">Confianza</h3>
+                        <p>Trato directo y honesto. Te explicamos todo con claridad para que sepas qué necesita tu auto.</p>
+                    </div>
+                    <div class="bg-[#212121] p-6 rounded-lg border border-zinc-800">
+                        <h3 class="text-xl font-bold text-white mb-2">Rapidez</h3>
+                        <p>Entendemos tu urgencia. Trabajamos de forma eficiente para que tengas tu vehículo lo antes posible.</p>
+                    </div>
+                    <div class="bg-[#212121] p-6 rounded-lg border border-zinc-800">
+                        <h3 class="text-xl font-bold text-white mb-2">Soluciones a Medida</h3>
+                        <p>Nos adaptamos a cualquier necesidad, buscando siempre la mejor solución para vos y tu auto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="py-20 bg-[#121212]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Servicios Profesionales</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="bg-[#212121] p-8 rounded-lg border border-zinc-800">
+                        <h3 class="text-2xl font-bold text-white">Pintura Automotriz</h3>
+                    </div>
+                    <div class="bg-[#212121] p-8 rounded-lg border border-zinc-800">
+                        <h3 class="text-2xl font-bold text-white">Chapa y Reparaciones</h3>
+                    </div>
+                    <div class="bg-[#212121] p-8 rounded-lg border border-zinc-800">
+                        <h3 class="text-2xl font-bold text-white">Mecánica General</h3>
+                    </div>
+                    <div class="bg-[#212121] p-8 rounded-lg border border-zinc-800">
+                        <h3 class="text-2xl font-bold text-white">Soluciones a Medida</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Galería -->
+        <section id="galeria" class="py-20 bg-[#1a1a1a]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Trabajos Realizados</h2>
+                    <p class="text-[#B0B0B0] mt-2">Una imagen vale más que mil palabras. Mirá la calidad de nuestro trabajo.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/94a3b8/ffffff?text=Antes:+Choque+Frontal" alt="Auto antes de reparación" class="rounded-t-lg w-full"><img src="https://placehold.co/600x400/E53935/ffffff?text=Después:+Impecable" alt="Auto después de reparación" class="rounded-b-lg w-full"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/94a3b8/ffffff?text=Antes:+Lateral+Rayado" alt="Auto antes de pintura" class="rounded-t-lg w-full"><img src="https://placehold.co/600x400/E53935/ffffff?text=Después:+Como+Nuevo" alt="Auto después de pintura" class="rounded-b-lg w-full"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/94a3b8/ffffff?text=Antes:+Paragolpes+Roto" alt="Paragolpes antes de la reparación" class="rounded-t-lg w-full"><img src="https://placehold.co/600x400/E53935/ffffff?text=Después:+Restaurado" alt="Paragolpes después de la reparación" class="rounded-b-lg w-full"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Contacto / CTA Final -->
+        <section id="contacto" class="py-20 bg-[#121212]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Listo para dejar tu auto como nuevo?</h2>
+                <p class="text-lg text-[#B0B0B0] mb-8 max-w-2xl mx-auto">Enviame un mensaje por WhatsApp para un presupuesto sin cargo o seguime en Instagram para ver más trabajos.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://wa.me/541171091304?text=Hola,%20quisiera%20hacer%20una%20consulta%20para%20mi%20auto." target="_blank" class="cta-button w-full sm:w-auto bg-green-500 text-white font-bold py-3 px-8 rounded-lg text-lg inline-flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                    </a>
+                    <a href="https://instagram.com/MarinasTallerAutomotriz" target="_blank" class="cta-button w-full sm:w-auto bg-pink-600 text-white font-bold py-3 px-8 rounded-lg text-lg inline-flex items-center justify-center gap-2">
+                        <i class="fab fa-instagram"></i> Ver Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[#B0B0B0]">&copy; 2024 Mariñas Taller Automotriz. Todos los derechos reservados.</p>
+            <p class="text-zinc-600 text-sm mt-2">Zelaya, Buenos Aires.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
