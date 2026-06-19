@@ -25,18 +25,28 @@
         }
     </script>
     <style>
-        /* Deshabilitar selección de texto molesta al clickear rápido en móviles */
         .no-select {
             -webkit-tap-highlight-color: transparent;
             user-select: none;
         }
+        /* Personalización de scrollbar para el tablero de números */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3a506b;
+            border-radius: 4px;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen pb-24">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen pb-24 relative">
 
     <!-- HEADER / HERO -->
     <header class="bg-gradient-to-br from-brand-navy via-brand-blue to-brand-accent text-white shadow-xl relative overflow-hidden">
-        <!-- Decoración de fondo de luces de auto -->
         <div class="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-gold/5 rounded-full blur-3xl"></div>
 
@@ -44,14 +54,14 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                 <!-- Información Principal -->
                 <div class="text-center md:text-left space-y-4 max-w-xl">
-                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
-                        ⚡ ¡GRAN OPORTUNIDAD! Sorteo 100% Transparente
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-brand-gold/20 text-brand-gold border border-brand-gold/30 animate-pulse">
+                        ⚡ SISTEMA EN VIVO - SE RESERVA AL INSTANTE
                     </span>
                     <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                        Ganate este impecable <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">Ford Ka 3 Puertas</span>
+                        Ganate este impecable <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-slate-200">Ford Ka 3 Puertas</span>
                     </h1>
-                    <p class="text-slate-300 text-base md:text-lg">
-                        ¡Listo para transferir y disfrutar! Sortea directamente por la **Lotería de la Ciudad de Buenos Aires** al completarse los números. ¡No te quedes afuera!
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        ¡Listo para transferir y disfrutar! Sortea directamente por la **Lotería de la Ciudad de Buenos Aires** (Nocturna) al completarse los números. ¡Elegí tu suerte!
                     </p>
                     
                     <!-- Tarjeta de Datos Rápidos -->
@@ -67,58 +77,64 @@
                     </div>
                 </div>
 
-                <!-- Imagen Destacada del Auto (Carrusel Interactivo) -->
+                <!-- Carrusel de Fotos Interactivo -->
                 <div class="w-full md:w-1/2 max-w-md">
                     <div class="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-2xl">
-                        <!-- Visor de imagen -->
-                        <div class="relative h-64 md:h-72 w-full rounded-xl overflow-hidden bg-slate-900 group">
-                            <!-- Foto 1 (Frente - Patente JSI 775) -->
-                            <div id="slide-0" class="absolute inset-0 transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center">
-                                <div class="absolute top-2 left-2 bg-brand-navy/80 text-white text-xs px-2.5 py-1 rounded-md font-bold">VISTA FRONTAL (Patente JSI 775)</div>
-                                <!-- Ilustración representativa de Ford Ka blanco moderno -->
-                                <svg class="w-48 h-48 text-slate-300 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 55 C10 40, 20 30, 45 28 C70 26, 85 32, 90 45 C92 50, 92 58, 90 62 C85 68, 15 68, 10 55 Z" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-                                    <path d="M45 28 C50 15, 75 15, 82 32 Z" fill="#1E293B" opacity="0.8"/>
-                                    <circle cx="28" cy="65" r="10" fill="#0F172A" stroke="#E2E8F0" stroke-width="3"/>
-                                    <circle cx="75" cy="65" r="10" fill="#0F172A" stroke="#E2E8F0" stroke-width="3"/>
-                                    <rect x="40" y="52" width="20" height="8" rx="2" fill="#E2E8F0" stroke="#475569"/>
-                                    <text x="43" y="58" font-family="monospace" font-size="4" fill="#000" font-weight="bold">JSI 775</text>
-                                    <circle cx="15" cy="48" r="4" fill="#FEF08A" opacity="0.9"/>
-                                    <circle cx="88" cy="46" r="4" fill="#FEF08A" opacity="0.9"/>
-                                </svg>
-                                <span class="absolute bottom-3 text-center text-xs text-slate-400 bg-black/40 px-3 py-1 rounded-full">Ford Ka Blanco - Carrocería Impecable</span>
+                        <div class="relative h-64 md:h-72 w-full rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
+                            
+                            <!-- Foto 1: Frente (JSI 775) -->
+                            <div id="slide-0" class="absolute inset-0 transition-opacity duration-500 ease-in-out flex flex-col justify-between p-4 bg-gradient-to-t from-slate-950 via-slate-900 to-slate-850">
+                                <span class="bg-brand-navy/90 text-white text-xs px-2.5 py-1 rounded-md font-bold self-start">FOTO 1: VISTA FRONTAL (Patente JSI 775)</span>
+                                
+                                <div class="flex flex-col items-center justify-center flex-grow py-2">
+                                    <svg class="w-40 h-28 text-white/90" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 40 C12 25, 25 15, 50 15 C75 15, 88 25, 88 40 C88 48, 80 50, 50 50 C20 50, 12 48, 12 40 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                                        <path d="M25 22 C30 12, 70 12, 75 22 Z" fill="#1E293B"/>
+                                        <circle cx="28" cy="48" r="8" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
+                                        <circle cx="72" cy="48" r="8" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
+                                        <rect x="38" y="38" width="24" height="7" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+                                        <text x="41" y="43" font-family="monospace" font-size="4" fill="#000" font-weight="bold">JSI 775</text>
+                                    </svg>
+                                    <p class="text-[11px] text-slate-300 text-center mt-2 px-4 italic">"Frente impecable, ópticas limpias y pintura original brillante"</p>
+                                </div>
+                                <span class="text-center text-[10px] text-slate-400 bg-black/40 py-1 rounded-lg">📸 Reemplazá este slide por la foto de frente de tu auto en WordPress</span>
                             </div>
 
-                            <!-- Foto 2 (Lateral) -->
-                            <div id="slide-1" class="absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex flex-col justify-center items-center">
-                                <div class="absolute top-2 left-2 bg-brand-navy/80 text-white text-xs px-2.5 py-1 rounded-md font-bold">VISTA LATERAL (3 Puertas)</div>
-                                <svg class="w-48 h-48 text-slate-300 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 55 C5 45, 12 35, 30 30 C50 25, 80 32, 95 45 C98 52, 92 64, 85 64 L15 64 C8 64, 5 62, 5 55 Z" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-                                    <path d="M30 31 C35 22, 55 22, 60 32 Z" fill="#1E293B" opacity="0.8"/>
-                                    <path d="M62 32 C65 24, 80 28, 85 36 Z" fill="#1E293B" opacity="0.8"/>
-                                    <circle cx="25" cy="62" r="11" fill="#0F172A" stroke="#E2E8F0" stroke-width="3"/>
-                                    <circle cx="75" cy="62" r="11" fill="#0F172A" stroke="#E2E8F0" stroke-width="3"/>
-                                    <rect x="42" y="45" width="8" height="2" rx="1" fill="#000"/>
-                                </svg>
-                                <span class="absolute bottom-3 text-center text-xs text-slate-400 bg-black/40 px-3 py-1 rounded-full">Llantas deportivas originales y cubiertas excelentes</span>
+                            <!-- Foto 2: Lateral -->
+                            <div id="slide-1" class="absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex flex-col justify-between p-4 bg-gradient-to-t from-slate-950 via-slate-900 to-slate-850">
+                                <span class="bg-brand-navy/90 text-white text-xs px-2.5 py-1 rounded-md font-bold self-start">FOTO 2: VISTA LATERAL (3 PUERTAS)</span>
+                                <div class="flex flex-col items-center justify-center flex-grow py-2">
+                                    <svg class="w-40 h-28 text-white/90" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 38 C8 28, 18 20, 38 18 C65 15, 85 22, 92 35 C95 42, 90 48, 80 48 L20 48 C12 48, 8 45, 8 38 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                                        <path d="M35 19 C40 10, 65 12, 70 20 Z" fill="#1E293B"/>
+                                        <circle cx="25" cy="46" r="9" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
+                                        <circle cx="75" cy="46" r="9" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
+                                    </svg>
+                                    <p class="text-[11px] text-slate-300 text-center mt-2 px-4 italic">"Excelente línea, cubiertas con muy poco uso y llantas deportivas"</p>
+                                </div>
+                                <span class="text-center text-[10px] text-slate-400 bg-black/40 py-1 rounded-lg">📸 Reemplazá este slide por la foto lateral en WordPress</span>
                             </div>
 
-                            <!-- Foto 3 (Trasera) -->
-                            <div id="slide-2" class="absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex flex-col justify-center items-center">
-                                <div class="absolute top-2 left-2 bg-brand-navy/80 text-white text-xs px-2.5 py-1 rounded-md font-bold">VISTA TRASERA</div>
-                                <svg class="w-48 h-48 text-slate-300 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 45 C15 32, 25 28, 50 28 C75 28, 85 32, 85 45 C85 58, 80 65, 50 65 C20 65, 15 58, 15 45 Z" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-                                    <path d="M22 32 C28 20, 72 20, 78 32 Z" fill="#1E293B" opacity="0.8"/>
-                                    <rect x="38" y="52" width="24" height="8" rx="2" fill="#E2E8F0" stroke="#475569"/>
-                                    <text x="44" y="58" font-family="monospace" font-size="4" fill="#000" font-weight="bold">JSI 775</text>
-                                    <path d="M16 45 C16 42, 20 42, 20 45 L18 52 C16 52, 16 48, 16 45 Z" fill="#EF4444"/>
-                                    <path d="M84 45 C84 42, 80 42, 80 45 L82 52 C84 52, 84 48, 84 45 Z" fill="#EF4444"/>
-                                </svg>
-                                <span class="absolute bottom-3 text-center text-xs text-slate-400 bg-black/40 px-3 py-1 rounded-full">Baúl amplio y excelente estado general</span>
+                            <!-- Foto 3: Trasera -->
+                            <div id="slide-2" class="absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex flex-col justify-between p-4 bg-gradient-to-t from-slate-950 via-slate-900 to-slate-850">
+                                <span class="bg-brand-navy/90 text-white text-xs px-2.5 py-1 rounded-md font-bold self-start">FOTO 3: VISTA TRASERA (Patente JSI 775)</span>
+                                <div class="flex flex-col items-center justify-center flex-grow py-2">
+                                    <svg class="w-40 h-28 text-white/90" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 35 C15 22, 25 18, 50 18 C75 18, 85 22, 85 35 C85 45, 80 48, 50 48 C20 48, 15 45, 15 35 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                                        <path d="M22 22 C28 12, 72 12, 78 22 Z" fill="#1E293B"/>
+                                        <rect x="38" y="36" width="24" height="7" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+                                        <text x="41" y="41" font-family="monospace" font-size="4" fill="#000" font-weight="bold">JSI 775</text>
+                                        <path d="M16 35 C16 32, 20 32, 20 35 L19 40 C17 40, 16 38, 16 35 Z" fill="#EF4444"/>
+                                        <path d="M84 35 C84 32, 80 32, 80 35 L81 40 C83 40, 84 38, 84 35 Z" fill="#EF4444"/>
+                                    </svg>
+                                    <p class="text-[11px] text-slate-300 text-center mt-2 px-4 italic">"Ópticas traseras sanas y luneta térmica en perfecto funcionamiento"</p>
+                                </div>
+                                <span class="text-center text-[10px] text-slate-400 bg-black/40 py-1 rounded-lg">📸 Reemplazá este slide por la foto trasera en WordPress</span>
                             </div>
+
                         </div>
 
-                        <!-- Miniaturas selectores del carrusel -->
+                        <!-- Miniaturas selectores -->
                         <div class="grid grid-cols-3 gap-2 mt-3">
                             <button onclick="setSlide(0)" id="thumb-0" class="border-2 border-brand-gold bg-white/10 rounded-lg p-1 transition-all">
                                 <span class="block text-[10px] text-center font-bold text-white uppercase">Frente</span>
@@ -136,33 +152,39 @@
         </div>
     </header>
 
+    <!-- ESTADO DE LA CONEXIÓN DE BASE DE DATOS -->
+    <div id="db-loader" class="bg-brand-navy text-white text-center py-2 text-xs font-semibold flex items-center justify-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-ping"></span>
+        Sincronizando números disponibles con la nube en tiempo real...
+    </div>
+
     <main class="max-w-6xl mx-auto px-4 py-8">
         <!-- SECCIÓN: PASOS PARA PARTICIPAR -->
         <section class="mb-10">
             <h2 class="text-xl font-bold text-brand-navy mb-4 text-center md:text-left flex items-center gap-2">
                 <span class="flex items-center justify-center bg-brand-gold text-brand-navy rounded-full w-6 h-6 text-sm">💡</span>
-                ¿Cómo comprar tu número?
+                ¿Cómo funciona el sistema de reserva directa?
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex gap-3 items-start">
                     <span class="text-brand-gold text-2xl font-black">1.</span>
                     <div>
-                        <h3 class="font-bold text-slate-900 text-sm">Elegí tus números</h3>
-                        <p class="text-xs text-slate-500">Seleccioná uno o varios números disponibles del tablero táctil abajo.</p>
+                        <h3 class="font-bold text-slate-900 text-sm">Elegís tus números</h3>
+                        <p class="text-xs text-slate-500">Tocás los números que más te gusten. Si están en gris, ya fueron vendidos o reservados por otra persona.</p>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex gap-3 items-start">
                     <span class="text-brand-gold text-2xl font-black">2.</span>
                     <div>
-                        <h3 class="font-bold text-slate-900 text-sm">Completá tus datos</h3>
-                        <p class="text-xs text-slate-500">Ingresá tu nombre y teléfono para que podamos registrar tu jugada.</p>
+                        <h3 class="font-bold text-slate-900 text-sm">Completás tus datos</h3>
+                        <p class="text-xs text-slate-500">Ingresás tu nombre y celular para asignarte formalmente la reserva en la base de datos de la web.</p>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex gap-3 items-start">
                     <span class="text-brand-gold text-2xl font-black">3.</span>
                     <div>
-                        <h3 class="font-bold text-slate-900 text-sm">Reservá por WhatsApp</h3>
-                        <p class="text-xs text-slate-500">El sistema te enviará a nuestro chat para enviarnos el comprobante de pago.</p>
+                        <h3 class="font-bold text-slate-900 text-sm">Confirmás por WhatsApp</h3>
+                        <p class="text-xs text-slate-500">El sistema te abre el chat con los datos listos. Nos mandás el comprobante de pago y te confirmamos al instante.</p>
                     </div>
                 </div>
             </div>
@@ -171,18 +193,20 @@
         <!-- SECCIÓN DE SELECCIÓN DE NÚMEROS -->
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <!-- PANEL IZQUIERDO Y CENTRAL: TABLERO DE NÚMEROS -->
+            <!-- PANEL TABLERO (IZQUIERDO) -->
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 md:p-6">
                     
-                    <!-- Encabezado del Tablero y Buscador -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
                         <div>
-                            <h2 class="text-2xl font-black text-brand-navy">Elegí tus números</h2>
-                            <p class="text-xs text-slate-400">Hacé clic para seleccionar. Podés elegir la cantidad que quieras.</p>
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-2xl font-black text-brand-navy">Tablero Oficial</h2>
+                                <span id="admin-indicator" class="hidden text-[10px] font-bold bg-purple-600 text-white px-2 py-0.5 rounded-full animate-bounce">MODO ADMIN ACTIVO</span>
+                            </div>
+                            <p class="text-xs text-slate-400">Podés navegar entre los rangos para ver los 1000 números.</p>
                         </div>
                         
-                        <!-- Buscador de Número Específico -->
+                        <!-- Buscador -->
                         <div class="relative max-w-xs">
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -193,66 +217,49 @@
                         </div>
                     </div>
 
-                    <!-- Botones de Selección Rápida (Azar) -->
-                    <div class="mb-6 p-3 bg-slate-50 rounded-xl border border-slate-200">
-                        <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">⚡ Selección Rápida al Azar</span>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                            <button onclick="selectRandom(1)" class="py-2 px-3 bg-brand-blue text-white rounded-lg text-xs font-bold hover:bg-brand-navy transition duration-200 shadow-sm">
-                                🎲 Comprar 1 azar
-                            </button>
-                            <button onclick="selectRandom(3)" class="py-2 px-3 bg-brand-blue text-white rounded-lg text-xs font-bold hover:bg-brand-navy transition duration-200 shadow-sm">
-                                🎲 Comprar 3 azar
-                            </button>
-                            <button onclick="selectRandom(5)" class="py-2 px-3 bg-brand-blue text-white rounded-lg text-xs font-bold hover:bg-brand-navy transition duration-200 shadow-sm">
-                                🎲 Comprar 5 azar
-                            </button>
-                            <button onclick="selectRandom(10)" class="py-2 px-3 bg-brand-gold text-brand-navy rounded-lg text-xs font-black hover:bg-brand-goldHover transition duration-200 shadow-sm">
-                                🔥 Comprar 10 azar
-                            </button>
-                        </div>
-                    </div>
-
                     <!-- Referencias de Estado -->
                     <div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 mb-4 border-b border-slate-100 pb-3">
                         <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-slate-100 border border-slate-300 inline-block"></span> Disponible
+                            <span class="w-3.5 h-3.5 rounded bg-white border border-slate-300 inline-block"></span> Disponible
                         </span>
                         <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-brand-gold text-brand-navy inline-block text-center text-[10px] font-bold">✓</span> Seleccionado
+                            <span class="w-3.5 h-3.5 rounded bg-brand-gold text-brand-navy inline-block text-center text-[10px] font-bold">✓</span> Seleccionado por vos
                         </span>
                         <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-slate-300 opacity-60 inline-block"></span> Reservado / Vendido
+                            <span class="w-3.5 h-3.5 rounded bg-amber-400 opacity-80 inline-block"></span> Reservado (Pendiente Pago)
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-slate-400 opacity-60 inline-block"></span> Vendido (Pago Completado)
                         </span>
                     </div>
 
-                    <!-- Selector de Rangos (Pestañas para rendimiento móvil óptimo) -->
+                    <!-- Rangos en Pestañas -->
                     <div class="flex overflow-x-auto gap-1 mb-4 pb-2 scrollbar-none no-select" id="tabs-container">
-                        <!-- Generado dinámicamente -->
+                        <!-- Generado por JS -->
                     </div>
 
-                    <!-- Grilla de Números -->
+                    <!-- Grilla de Botones -->
                     <div class="grid grid-cols-5 sm:grid-cols-10 gap-2 max-h-[400px] overflow-y-auto p-1 border border-slate-100 rounded-lg no-select" id="numbers-grid">
-                        <!-- Generado dinámicamente por JS para el rango actual -->
+                        <!-- Generado por JS -->
                     </div>
                     
                 </div>
             </div>
 
-            <!-- PANEL DERECHO: FORMULARIO DE RESERVA / RESUMEN -->
+            <!-- PANEL RESERVA (DERECHO) -->
             <div class="lg:col-span-1">
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-5 sticky top-4 space-y-6">
                     <div>
                         <h3 class="text-lg font-black text-brand-navy flex items-center gap-2">
-                            🛒 Mi Reserva
+                            🛒 Mi Compra
                         </h3>
-                        <p class="text-xs text-slate-400">Verificá tus números elegidos para confirmar.</p>
+                        <p class="text-xs text-slate-400">Verificá tu selección antes de enviar.</p>
                     </div>
 
-                    <!-- Caja de Números Seleccionados -->
+                    <!-- Caja de Selección -->
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 min-h-[80px] flex flex-col justify-between">
-                        <div class="text-xs text-slate-400 mb-2">Números seleccionados:</div>
+                        <div class="text-xs text-slate-400 mb-2">Números elegidos:</div>
                         <div id="selected-list" class="flex flex-wrap gap-1.5">
-                            <!-- JS inyectará las píldoras de números aquí -->
                             <span class="text-xs text-slate-400 italic">No seleccionaste ningún número aún.</span>
                         </div>
                     </div>
@@ -260,11 +267,11 @@
                     <!-- Resumen de Costos -->
                     <div class="border-t border-slate-100 pt-4 space-y-2">
                         <div class="flex justify-between text-xs text-slate-500">
-                            <span>Cantidad de números:</span>
+                            <span>Cantidad:</span>
                             <span class="font-bold" id="resumen-cantidad">0</span>
                         </div>
                         <div class="flex justify-between text-xs text-slate-500">
-                            <span>Precio por unidad:</span>
+                            <span>Precio por número:</span>
                             <span class="font-bold">$12.000</span>
                         </div>
                         <div class="flex justify-between items-center text-slate-800 pt-2 border-t border-dashed border-slate-200">
@@ -273,7 +280,7 @@
                         </div>
                     </div>
 
-                    <!-- Formulario del Comprador -->
+                    <!-- Datos del Comprador -->
                     <div class="space-y-3">
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">Nombre Completo *</label>
@@ -281,36 +288,31 @@
                                 class="w-full text-sm px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1">Teléfono de Contacto (con WhatsApp) *</label>
-                            <input type="tel" id="buyer-phone" placeholder="Ej: 11 1234 5678" 
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Teléfono con WhatsApp *</label>
+                            <input type="tel" id="buyer-phone" placeholder="Ej: 11 7109 1307" 
                                 class="w-full text-sm px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue">
                         </div>
                     </div>
 
-                    <!-- Botón de Envío por WhatsApp -->
+                    <!-- Botón de Envío -->
                     <button onclick="requestReservation()" class="w-full py-4 bg-brand-success hover:bg-emerald-600 text-white font-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-base">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.6.95 3.198 1.451 4.85 1.453 5.464 0 9.903-4.44 9.907-9.911.002-2.65-1.03-5.143-2.902-7.019C16.632 1.799 14.137.769 11.49.769c-5.468 0-9.907 4.442-9.911 9.914-.001 1.724.456 3.41 1.32 4.916l-.995 3.634 3.723-.976zm11.365-6.864c-.29-.146-1.714-.846-1.979-.942-.266-.096-.459-.144-.652.146-.194.291-.748.942-.917 1.135-.169.193-.338.217-.628.072-.29-.145-1.226-.452-2.335-1.442-.863-.77-1.446-1.72-1.616-2.011-.17-.291-.018-.448.127-.592.13-.13.29-.339.435-.509.145-.17.193-.291.29-.485.097-.194.049-.364-.025-.509-.072-.146-.652-1.573-.893-2.155-.235-.568-.473-.49-.652-.499-.17-.008-.363-.01-.556-.01-.193 0-.507.073-.772.364-.266.291-1.014.992-1.014 2.422 0 1.43 1.039 2.812 1.184 3.006.145.194 2.045 3.123 4.954 4.382.692.3 1.232.479 1.653.613.696.222 1.329.191 1.83.116.558-.083 1.714-.701 1.956-1.378.24-.677.24-1.258.17-1.378-.073-.12-.266-.194-.556-.34z"/></svg>
                         Reservar y pagar vía WhatsApp
                     </button>
-                    
-                    <div class="text-[10px] text-center text-slate-400">
-                        * Tus datos están seguros y se usarán únicamente para la validación y comunicación directa del premio de esta rifa.
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: TRANSPARENCIA Y PREGUNTAS FRECUENTES -->
+        <!-- INFORMACIÓN / TRANSPARENCIA -->
         <section class="mt-12 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 max-w-4xl mx-auto">
             <h2 class="text-2xl font-black text-brand-navy mb-6 text-center">Transparencia e Información del Sorteo</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Columna 1 -->
                 <div class="space-y-4">
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
                         <h4 class="font-bold text-sm text-slate-800 mb-1">🎟️ ¿Cómo funciona el sorteo?</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            El ganador será el titular del número que coincida exactamente con las **últimas 3 cifras** del primer premio de la **Lotería de la Ciudad de Buenos Aires (Nocturna)** en la fecha que se fije una vez vendidos el 90% de los números.
+                            El ganador será el titular del número que coincida exactamente con las **últimas 3 cifras** del primer premio de la **Lotería de la Ciudad de Buenos Aires (Nocturna)** en la fecha que se fije una vez vendidos los números.
                         </p>
                     </div>
 
@@ -322,7 +324,6 @@
                     </div>
                 </div>
 
-                <!-- Columna 2 -->
                 <div class="space-y-4">
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
                         <h4 class="font-bold text-sm text-slate-800 mb-1">💳 ¿Cómo abono mis números?</h4>
@@ -344,51 +345,82 @@
         </section>
     </main>
 
+    <!-- MODAL DE ADMINISTRACIÓN (GESTIÓN DE ESTADOS) -->
+    <div id="admin-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-brand-navy text-white p-4 flex justify-between items-center">
+                <h3 class="font-black text-base flex items-center gap-1.5">
+                    ⚙️ Gestión de Número <span id="modal-num-title" class="text-brand-gold font-extrabold text-lg">000</span>
+                </h3>
+                <button onclick="closeAdminModal()" class="text-white hover:text-red-400 font-bold text-lg">×</button>
+            </div>
+            <div class="p-5 space-y-4">
+                <!-- Información del comprador si tiene reserva -->
+                <div id="modal-buyer-box" class="bg-slate-50 rounded-xl p-3.5 border border-slate-200 space-y-1.5 text-xs">
+                    <div class="text-slate-400 font-bold uppercase tracking-wider text-[10px]">Datos de Reserva:</div>
+                    <div>👤 <strong>Nombre:</strong> <span id="modal-buyer-name" class="text-slate-700">Ninguno</span></div>
+                    <div>📞 <strong>Teléfono:</strong> <span id="modal-buyer-phone" class="text-slate-700">Ninguno</span></div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-slate-500 uppercase">Cambiar Estado:</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setTicketState('disponible')" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-lg transition">
+                            🔓 Disponible
+                        </button>
+                        <button onclick="setTicketState('reservado')" class="py-2.5 bg-amber-400 hover:bg-amber-500 text-brand-navy text-xs font-bold rounded-lg transition">
+                            ⏳ Reservado
+                        </button>
+                        <button onclick="setTicketState('vendido')" class="py-2.5 bg-slate-400 hover:bg-slate-500 text-white text-xs font-bold rounded-lg transition">
+                            🔒 Vendido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- NOTIFICACIONES INLINE (TOASTS) -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-navy text-white text-sm py-3 px-5 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none flex items-center gap-2">
-        <span id="toast-message">Mensaje de prueba</span>
+        <span id="toast-message">Mensaje</span>
     </div>
 
     <!-- PIE DE PÁGINA -->
     <footer class="bg-brand-navy text-slate-400 py-6 text-center text-xs mt-12 border-t border-slate-800">
         <p>© 2026 Rifa Ford Ka - Patente JSI 775. Todos los derechos reservados.</p>
-        <p class="mt-1 text-[10px]">Diseñado con un enfoque confiable y seguro para venta ágil.</p>
+        <button onclick="askAdminAccess()" class="mt-2 text-slate-600 hover:text-brand-gold transition duration-200 text-[11px] font-semibold underline block mx-auto">
+            ⚙️ Acceso Administrador (Clave: 775)
+        </button>
     </footer>
 
-    <!-- LOGICA JAVASCRIPT -->
-    <script>
-        // 1. Configuración de datos del negocio/rifa
-        const WHATSAPP_CONTACT = "5491171091307"; // Número real del organizador
+    <!-- LÓGICA DE FIREBASE Y FUNCIONAMIENTO EN TIEMPO REAL -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Inicialización de Firebase
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'ford-ka-rifa';
+
+        // Configuración de la Rifa
+        const WHATSAPP_CONTACT = "5491171091307"; // Tu número de WhatsApp real
         const TICKET_PRICE = 12000;
         const TOTAL_NUMBERS = 1000;
 
-        // Estado del Carrito/Reserva
         let selectedNumbers = [];
         let currentSlide = 0;
-        let activeTabRange = 0; // 0 = 0-199, 1 = 200-399, etc.
+        let activeTabRange = 0;
+        let user = null;
 
-        // Todos los números empiezan 100% disponibles (vaciamos la simulación)
-        let soldNumbers = new Set();
+        let ticketReservations = {}; 
+        let isAdmin = false;
+        let activeAdminNum = null;
 
-        // 2. Control del carrusel de fotos
-        const setSlide = (index) => {
-            currentSlide = index;
-            for (let i = 0; i < 3; i++) {
-                const slide = document.getElementById(`slide-${i}`);
-                const thumb = document.getElementById(`thumb-${i}`);
-                if (i === index) {
-                    slide.classList.remove('opacity-0');
-                    thumb.classList.add('border-brand-gold');
-                    thumb.classList.remove('border-transparent', 'opacity-60');
-                } else {
-                    slide.classList.add('opacity-0');
-                    thumb.classList.remove('border-brand-gold');
-                    thumb.classList.add('border-transparent', 'opacity-60');
-                }
-            }
-        };
-
-        // 3. Generación táctil de números por rangos de pestañas
+        // Rangos de pestañas
         const ranges = [
             { label: "000 - 199", start: 0, end: 199 },
             { label: "200 - 399", start: 200, end: 399 },
@@ -397,6 +429,60 @@
             { label: "750 - 999", start: 750, end: 999 }
         ];
 
+        // Autenticación según las reglas de Canvas (Auth antes de cualquier consulta)
+        const initAuth = async () => {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (e) {
+                console.error("Error en Firebase Auth:", e);
+                showToast("⚠️ Error al conectar con la base de datos.");
+            }
+        };
+
+        // Escuchamos el cambio de estado de autenticación y luego iniciamos la base de datos
+        onAuthStateChanged(auth, (loggedUser) => {
+            user = loggedUser;
+            if (user) {
+                listenToReservations();
+            }
+        });
+
+        // Sincronización en tiempo real con ruta de seguridad estricta
+        const getGlobalStateDocRef = () => {
+            return doc(db, 'artifacts', appId, 'public', 'data', 'globalState', 'tickets');
+        };
+
+        const listenToReservations = () => {
+            if (!user) return; // Regla estricta 3 de Canvas
+            const docRef = getGlobalStateDocRef();
+            
+            onSnapshot(docRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    ticketReservations = docSnap.data() || {};
+                } else {
+                    ticketReservations = {};
+                }
+                
+                document.getElementById('db-loader').innerHTML = `
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                    Base de datos conectada en tiempo real
+                `;
+                setTimeout(() => {
+                    document.getElementById('db-loader').classList.add('hidden');
+                }, 2000);
+
+                updateUI();
+            }, (error) => {
+                console.error("Error leyendo Firestore:", error);
+                showToast("⚠️ Sincronizando números... Por favor, esperá un momento.");
+            });
+        };
+
+        // Generar pestañas
         const initTabs = () => {
             const container = document.getElementById('tabs-container');
             container.innerHTML = '';
@@ -418,6 +504,7 @@
             });
         };
 
+        // Renderizar botones de la grilla
         const renderGrid = (filterTerm = '') => {
             const grid = document.getElementById('numbers-grid');
             grid.innerHTML = '';
@@ -426,7 +513,6 @@
             let start = range.start;
             let end = range.end;
 
-            // Si hay un término de búsqueda, saltamos la paginación y renderizamos los resultados que coincidan
             if (filterTerm.trim() !== '') {
                 for (let i = 0; i < TOTAL_NUMBERS; i++) {
                     const numString = String(i).padStart(3, '0');
@@ -437,94 +523,94 @@
                 return;
             }
 
-            // Renderizado normal por pestañas
             for (let i = start; i <= end; i++) {
                 createNumberButton(i, grid);
             }
         };
 
         const createNumberButton = (num, container) => {
-            const isSold = soldNumbers.has(num);
-            const isSelected = selectedNumbers.includes(num);
             const numString = String(num).padStart(3, '0');
+            const reservation = ticketReservations[numString];
+            const isSelected = selectedNumbers.includes(num);
+
+            let btnClass = "bg-white text-slate-700 border-slate-200 hover:border-brand-blue hover:text-brand-blue hover:bg-slate-50";
+            let statusChar = "";
+
+            if (reservation) {
+                if (reservation.status === 'vendido') {
+                    btnClass = "bg-slate-300 text-slate-500 border-slate-300 opacity-60 cursor-not-allowed";
+                    statusChar = "🔒";
+                } else if (reservation.status === 'reservado') {
+                    btnClass = "bg-amber-400 text-brand-navy border-amber-400 font-extrabold";
+                    statusChar = "⏳";
+                }
+            }
+
+            if (isSelected) {
+                btnClass = "bg-brand-gold text-brand-navy border-brand-gold scale-95 ring-2 ring-brand-navy shadow-inner";
+                statusChar = "✓";
+            }
 
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = `aspect-square flex items-center justify-center font-bold text-xs rounded-lg border transition-all duration-150 ${
-                isSold 
-                ? 'bg-slate-100 text-slate-300 border-slate-100 cursor-not-allowed opacity-60' 
-                : isSelected
-                ? 'bg-brand-gold text-brand-navy border-brand-gold scale-95 ring-2 ring-brand-navy shadow-inner'
-                : 'bg-white text-slate-700 border-slate-200 hover:border-brand-blue hover:text-brand-blue hover:bg-slate-50'
-            }`;
+            btn.className = `aspect-square flex flex-col items-center justify-center font-bold text-xs rounded-lg border transition-all duration-150 relative ${btnClass}`;
             
-            // Si el número es la patente del auto (775), le agregamos un destello visual
-            if (num === 775 && !isSold && !isSelected) {
+            if (num === 775 && !reservation && !isSelected) {
                 btn.classList.add('animate-pulse', 'border-brand-gold', 'bg-yellow-50');
             }
 
-            btn.textContent = numString;
-            btn.disabled = isSold;
-            btn.onclick = () => toggleNumber(num);
+            btn.innerHTML = `
+                <span>${numString}</span>
+                ${statusChar ? `<span class="text-[8px] absolute bottom-0.5">${statusChar}</span>` : ''}
+            `;
+
+            btn.onclick = () => {
+                if (isAdmin) {
+                    openAdminModal(num);
+                } else {
+                    if (reservation && (reservation.status === 'vendido' || reservation.status === 'reservado')) {
+                        showToast(`El número ${numString} ya está reservado o vendido.`);
+                        return;
+                    }
+                    toggleNumber(num);
+                }
+            };
+
             container.appendChild(btn);
         };
 
-        // 4. Lógica de selección y deselección
         const toggleNumber = (num) => {
-            if (soldNumbers.has(num)) return;
-
             const index = selectedNumbers.indexOf(num);
             if (index > -1) {
                 selectedNumbers.splice(index, 1);
             } else {
                 selectedNumbers.push(num);
             }
-
             updateUI();
         };
 
-        // Selección automática al azar
-        const selectRandom = (quantity) => {
-            let count = 0;
-            let attempts = 0;
-            const maxAttempts = 2000; // Evitar loop infinito si casi no hay números libres
-
-            while (count < quantity && attempts < maxAttempts) {
-                attempts++;
-                let num = Math.floor(Math.random() * TOTAL_NUMBERS);
-                if (!soldNumbers.has(num) && !selectedNumbers.includes(num)) {
-                    selectedNumbers.push(num);
-                    count++;
+        // Cambiar slider de imágenes
+        const setSlide = (index) => {
+            currentSlide = index;
+            for (let i = 0; i < 3; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                const thumb = document.getElementById(`thumb-${i}`);
+                if (i === index) {
+                    slide.classList.remove('opacity-0');
+                    thumb.classList.add('border-brand-gold');
+                    thumb.classList.remove('border-transparent', 'opacity-60');
+                } else {
+                    slide.classList.add('opacity-0');
+                    thumb.classList.remove('border-brand-gold');
+                    thumb.classList.add('border-transparent', 'opacity-60');
                 }
-            }
-
-            if (count > 0) {
-                showToast(`Se agregaron ${count} números seleccionados al azar.`);
-                // Cambiar de pestaña al primer número de los seleccionados para mostrarlo
-                const firstNew = selectedNumbers[selectedNumbers.length - 1];
-                const foundIdx = ranges.findIndex(r => firstNew >= r.start && firstNew <= r.end);
-                if (foundIdx !== -1) {
-                    activeTabRange = foundIdx;
-                    initTabs();
-                }
-                updateUI();
-            } else {
-                showToast("No se encontraron números disponibles suficientes.");
             }
         };
 
-        // 5. Buscador Dinámico
-        const filterNumbers = () => {
-            const input = document.getElementById('search-input');
-            const term = input.value.trim();
-            renderGrid(term);
-        };
-
-        // 6. Actualización de Interfaz (Resumen)
+        // Actualizar formulario y resumen
         const updateUI = () => {
             renderGrid(document.getElementById('search-input').value);
 
-            // Lista lateral
             const listContainer = document.getElementById('selected-list');
             listContainer.innerHTML = '';
 
@@ -536,55 +622,169 @@
                     badge.className = 'inline-flex items-center gap-1 py-1 px-2.5 rounded-md text-xs font-bold bg-brand-gold/10 text-brand-navy border border-brand-gold/30';
                     badge.innerHTML = `
                         ${String(num).padStart(3, '0')}
-                        <button onclick="toggleNumber(${num})" class="text-brand-navy hover:text-red-500 font-black ml-1">×</button>
+                        <button type="button" class="text-brand-navy hover:text-red-500 font-black ml-1">×</button>
                     `;
+                    badge.querySelector('button').onclick = (e) => {
+                        e.stopPropagation();
+                        toggleNumber(num);
+                    };
                     listContainer.appendChild(badge);
                 });
             }
 
-            // Resúmenes numéricos
             const totalCost = selectedNumbers.length * TICKET_PRICE;
             document.getElementById('resumen-cantidad').textContent = selectedNumbers.length;
             document.getElementById('resumen-total').textContent = `$${totalCost.toLocaleString('es-AR')}`;
         };
 
-        // 7. Simulación de WhatsApp y Envío
-        const requestReservation = () => {
+        // Procesar reserva
+        const requestReservation = async () => {
+            if (!user) {
+                showToast("⚠️ Base de datos no conectada todavía. Intentá de nuevo.");
+                return;
+            }
+
             const name = document.getElementById('buyer-name').value.trim();
             const phone = document.getElementById('buyer-phone').value.trim();
 
             if (selectedNumbers.length === 0) {
-                showToast("⚠️ Por favor, selecciona al menos un número del tablero.");
+                showToast("⚠️ Seleccioná al menos un número del tablero.");
                 return;
             }
             if (!name) {
-                showToast("⚠️ Por favor, ingresá tu Nombre Completo.");
+                showToast("⚠️ Ingresá tu Nombre Completo.");
                 return;
             }
             if (!phone) {
-                showToast("⚠️ Por favor, ingresá tu teléfono de contacto.");
+                showToast("⚠️ Ingresá tu teléfono de contacto.");
                 return;
             }
 
-            // Formatear mensaje para WhatsApp
-            const numStrings = selectedNumbers.map(n => String(n).padStart(3, '0')).join(', ');
-            const total = (selectedNumbers.length * TICKET_PRICE).toLocaleString('es-AR');
-            
-            const message = `Hola! Quiero reservar los siguientes números para la rifa del Ford Ka (Patente JSI 775):\n\n` +
-                            `🎟️ Números: *[ ${numStrings} ]*\n` +
-                            `👤 Comprador: *${name}*\n` +
-                            `📞 Celular: *${phone}*\n` +
-                            `💰 Total a abonar: *$${total}*\n\n` +
-                            `Por favor, indicame el Alias de pago para transferir y enviarte el comprobante.`;
+            // Verificar conflicto de último segundo en el cliente
+            const conflict = selectedNumbers.find(num => {
+                const numStr = String(num).padStart(3, '0');
+                return ticketReservations[numStr] !== undefined;
+            });
 
-            const encodedMessage = encodeURIComponent(message);
-            const finalUrl = `https://wa.me/${WHATSAPP_CONTACT}?text=${encodedMessage}`;
+            if (conflict !== undefined) {
+                showToast(`⚠️ El número ${String(conflict).padStart(3, '0')} fue reservado por otro usuario recién.`);
+                return;
+            }
 
-            // Abrir WhatsApp en pestaña nueva
-            window.open(finalUrl, '_blank');
+            // Registrar en base de datos
+            try {
+                const updatedReservations = { ...ticketReservations };
+                selectedNumbers.forEach(num => {
+                    const numStr = String(num).padStart(3, '0');
+                    updatedReservations[numStr] = {
+                        status: 'reservado',
+                        name: name,
+                        phone: phone,
+                        timestamp: Date.now()
+                    };
+                });
+
+                await setDoc(getGlobalStateDocRef(), updatedReservations);
+
+                const numStrings = selectedNumbers.map(n => String(n).padStart(3, '0')).join(', ');
+                const total = (selectedNumbers.length * TICKET_PRICE).toLocaleString('es-AR');
+                
+                const message = `Hola! Acabo de reservar los siguientes números para la rifa del Ford Ka:\n\n` +
+                                `🎟️ Números: *[ ${numStrings} ]*\n` +
+                                `👤 Comprador: *${name}*\n` +
+                                `📞 Celular: *${phone}*\n` +
+                                `💰 Total a abonar: *$${total}*\n\n` +
+                                `Por favor, indicame el Alias para transferir los $12.000 por número y enviarte el comprobante. ¡Muchas gracias!`;
+
+                const encodedMessage = encodeURIComponent(message);
+                const finalUrl = `https://wa.me/${WHATSAPP_CONTACT}?text=${encodedMessage}`;
+
+                selectedNumbers = [];
+                updateUI();
+
+                showToast("✅ ¡Reserva registrada con éxito! Abriendo WhatsApp...");
+                
+                setTimeout(() => {
+                    window.open(finalUrl, '_blank');
+                }, 1500);
+
+            } catch (err) {
+                console.error("Error al guardar reserva:", err);
+                showToast("⚠️ Error al registrar tu reserva. Intentá de nuevo.");
+            }
         };
 
-        // 8. Mensajes flotantes (Toast)
+        // Buscar números
+        const filterNumbers = () => {
+            const input = document.getElementById('search-input');
+            const term = input.value.trim();
+            renderGrid(term);
+        };
+
+        // Acceso administrativo
+        window.askAdminAccess = () => {
+            const password = window.prompt("Ingresá la clave de administrador para gestionar los números (Patente del auto):");
+            if (password === '775') {
+                isAdmin = true;
+                document.getElementById('admin-indicator').classList.remove('hidden');
+                showToast("🔓 Modo Administrador Activado. Elegí cualquier número para cambiar su estado.");
+                renderGrid();
+            } else if (password !== null) {
+                showToast("❌ Clave incorrecta.");
+            }
+        };
+
+        window.openAdminModal = (num) => {
+            activeAdminNum = String(num).padStart(3, '0');
+            document.getElementById('modal-num-title').textContent = activeAdminNum;
+
+            const reservation = ticketReservations[activeAdminNum];
+            if (reservation) {
+                document.getElementById('modal-buyer-name').textContent = reservation.name || "Sin nombre";
+                document.getElementById('modal-buyer-phone').textContent = reservation.phone || "Sin teléfono";
+                document.getElementById('modal-buyer-box').classList.remove('hidden');
+            } else {
+                document.getElementById('modal-buyer-box').classList.add('hidden');
+            }
+
+            document.getElementById('admin-modal').classList.remove('hidden');
+        };
+
+        window.closeAdminModal = () => {
+            document.getElementById('admin-modal').classList.add('hidden');
+            activeAdminNum = null;
+        };
+
+        window.setTicketState = async (newState) => {
+            if (!activeAdminNum) return;
+            if (!user) {
+                showToast("❌ No autenticado.");
+                return;
+            }
+
+            try {
+                const updatedReservations = { ...ticketReservations };
+                if (newState === 'disponible') {
+                    delete updatedReservations[activeAdminNum];
+                } else {
+                    const existing = updatedReservations[activeAdminNum] || {};
+                    updatedReservations[activeAdminNum] = {
+                        status: newState,
+                        name: existing.name || "Administrador",
+                        phone: existing.phone || "N/A",
+                        timestamp: existing.timestamp || Date.now()
+                    };
+                }
+
+                await setDoc(getGlobalStateDocRef(), updatedReservations);
+                showToast(`✅ Número ${activeAdminNum} actualizado.`);
+                closeAdminModal();
+            } catch (err) {
+                console.error("Error actualizando estado:", err);
+                showToast("❌ Error al guardar.");
+            }
+        };
+
         const showToast = (message) => {
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toast-message');
@@ -597,11 +797,19 @@
             }, 3500);
         };
 
-        // Inicialización al cargar la ventana
-        window.onload = function () {
+        // Exportar funciones a ventana global
+        window.setSlide = setSlide;
+        window.filterNumbers = filterNumbers;
+        window.toggleNumber = toggleNumber;
+        window.requestReservation = requestReservation;
+
+        // Lanzar inicialización de Autenticación primero
+        const startApp = async () => {
+            await initAuth();
             initTabs();
             renderGrid();
         };
+        startApp();
     </script>
 </body>
 </html>
