@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gran Rifa Ford Ka - Sorteo Lotería de la Ciudad</title>
+    <title>Método Marinas | Movimiento Somático & Regulación del Sistema Nervioso</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,804 +12,661 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0B132B',
-                            blue: '#1C2541',
-                            accent: '#3A506B',
-                            gold: '#D4AF37',
-                            goldHover: '#AA820A',
-                            success: '#10B981'
+                            pantone: '#0f766e', // Teal Esmeralda Terapéutico
+                            light: '#f0fdfa',    // Fondo Menta Suave
+                            dark: '#115e59',     // Bosque Profundo Premium
+                            accent: '#ea580c',   // Terracota Enérgico (Acción)
+                            accentHover: '#c2410c',
+                            sand: '#fafaf9'      // Arena/Lino Cálido de fondo
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .no-select {
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        /* Personalización de scrollbar para el tablero de números */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3a506b;
-            border-radius: 4px;
+        .gradient-bg {
+            background: radial-gradient(circle at top, rgba(240, 253, 250, 0.8) 0%, rgba(250, 250, 249, 1) 100%);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen pb-24 relative">
+<body class="bg-brand-sand text-slate-800 antialiased min-h-screen flex flex-col">
 
-    <!-- HEADER / HERO -->
-    <header class="bg-gradient-to-br from-brand-navy via-brand-blue to-brand-accent text-white shadow-xl relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-gold/5 rounded-full blur-3xl"></div>
-
-        <div class="max-w-6xl mx-auto px-4 py-8 md:py-12 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                <!-- Información Principal -->
-                <div class="text-center md:text-left space-y-4 max-w-xl">
-                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-brand-gold/20 text-brand-gold border border-brand-gold/30 animate-pulse">
-                        ⚡ SISTEMA EN VIVO - SE RESERVA AL INSTANTE
-                    </span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                        Ganate este impecable <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-slate-200">Ford Ka 3 Puertas</span>
-                    </h1>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-                        ¡Listo para transferir y disfrutar! Sortea directamente por la **Lotería de la Ciudad de Buenos Aires** (Nocturna) al completarse los números. ¡Elegí tu suerte!
-                    </p>
-                    
-                    <!-- Tarjeta de Datos Rápidos -->
-                    <div class="grid grid-cols-2 gap-3 pt-2">
-                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
-                            <span class="block text-xs text-slate-400 uppercase tracking-wider font-semibold">Valor del número</span>
-                            <span class="text-2xl font-black text-brand-gold">$12.000</span>
-                        </div>
-                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
-                            <span class="block text-xs text-slate-400 uppercase tracking-wider font-semibold">Números en juego</span>
-                            <span class="text-2xl font-black text-white">000 - 999</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carrusel de Fotos Interactivo -->
-                <div class="w-full md:w-1/2 max-w-md">
-                    <div class="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-2xl">
-                        <div class="relative h-64 md:h-72 w-full rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
-                            
-                            <!-- Foto 1: Frente (JSI 775) -->
-                            <div id="slide-0" class="absolute inset-0 transition-opacity duration-500 ease-in-out flex flex-col justify-between p-4 bg-gradient-to-t from-slate-950 via-slate-900 to-slate-850">
-                                <span class="bg-brand-navy/90 text-white text-xs px-2.5 py-1 rounded-md font-bold self-start">FOTO 1: VISTA FRONTAL (Patente JSI 775)</span>
-                                
-                                <div class="flex flex-col items-center justify-center flex-grow py-2">
-                                    <svg class="w-40 h-28 text-white/90" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 40 C12 25, 25 15, 50 15 C75 15, 88 25, 88 40 C88 48, 80 50, 50 50 C20 50, 12 48, 12 40 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-                                        <path d="M25 22 C30 12, 70 12, 75 22 Z" fill="#1E293B"/>
-                                        <circle cx="28" cy="48" r="8" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
-                                        <circle cx="72" cy="48" r="8" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
-                                        <rect x="38" y="38" width="24" height="7" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
-                                        <text x="41" y="43" font-family="monospace" font-size="4" fill="#000" font-weight="bold">JSI 775</text>
-                                    </svg>
-                                    <p class="text-[11px] text-slate-300 text-center mt-2 px-4 italic">"Frente impecable, ópticas limpias y pintura original brillante"</p>
-                                </div>
-                                <span class="text-center text-[10px] text-slate-400 bg-black/40 py-1 rounded-lg">📸 Reemplazá este slide por la foto de frente de tu auto en WordPress</span>
-                            </div>
-
-                            <!-- Foto 2: Lateral -->
-                            <div id="slide-1" class="absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex flex-col justify-between p-4 bg-gradient-to-t from-slate-950 via-slate-900 to-slate-850">
-                                <span class="bg-brand-navy/90 text-white text-xs px-2.5 py-1 rounded-md font-bold self-start">FOTO 2: VISTA LATERAL (3 PUERTAS)</span>
-                                <div class="flex flex-col items-center justify-center flex-grow py-2">
-                                    <svg class="w-40 h-28 text-white/90" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 38 C8 28, 18 20, 38 18 C65 15, 85 22, 92 35 C95 42, 90 48, 80 48 L20 48 C12 48, 8 45, 8 38 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-                                        <path d="M35 19 C40 10, 65 12, 70 20 Z" fill="#1E293B"/>
-                                        <circle cx="25" cy="46" r="9" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
-                                        <circle cx="75" cy="46" r="9" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
-                                    </svg>
-                                    <p class="text-[11px] text-slate-300 text-center mt-2 px-4 italic">"Excelente línea, cubiertas con muy poco uso y llantas deportivas"</p>
-                                </div>
-                                <span class="text-center text-[10px] text-slate-400 bg-black/40 py-1 rounded-lg">📸 Reemplazá este slide por la foto lateral en WordPress</span>
-                            </div>
-
-                            <!-- Foto 3: Trasera -->
-                            <div id="slide-2" class="absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex flex-col justify-between p-4 bg-gradient-to-t from-slate-950 via-slate-900 to-slate-850">
-                                <span class="bg-brand-navy/90 text-white text-xs px-2.5 py-1 rounded-md font-bold self-start">FOTO 3: VISTA TRASERA (Patente JSI 775)</span>
-                                <div class="flex flex-col items-center justify-center flex-grow py-2">
-                                    <svg class="w-40 h-28 text-white/90" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 35 C15 22, 25 18, 50 18 C75 18, 85 22, 85 35 C85 45, 80 48, 50 48 C20 48, 15 45, 15 35 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-                                        <path d="M22 22 C28 12, 72 12, 78 22 Z" fill="#1E293B"/>
-                                        <rect x="38" y="36" width="24" height="7" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
-                                        <text x="41" y="41" font-family="monospace" font-size="4" fill="#000" font-weight="bold">JSI 775</text>
-                                        <path d="M16 35 C16 32, 20 32, 20 35 L19 40 C17 40, 16 38, 16 35 Z" fill="#EF4444"/>
-                                        <path d="M84 35 C84 32, 80 32, 80 35 L81 40 C83 40, 84 38, 84 35 Z" fill="#EF4444"/>
-                                    </svg>
-                                    <p class="text-[11px] text-slate-300 text-center mt-2 px-4 italic">"Ópticas traseras sanas y luneta térmica en perfecto funcionamiento"</p>
-                                </div>
-                                <span class="text-center text-[10px] text-slate-400 bg-black/40 py-1 rounded-lg">📸 Reemplazá este slide por la foto trasera en WordPress</span>
-                            </div>
-
-                        </div>
-
-                        <!-- Miniaturas selectores -->
-                        <div class="grid grid-cols-3 gap-2 mt-3">
-                            <button onclick="setSlide(0)" id="thumb-0" class="border-2 border-brand-gold bg-white/10 rounded-lg p-1 transition-all">
-                                <span class="block text-[10px] text-center font-bold text-white uppercase">Frente</span>
-                            </button>
-                            <button onclick="setSlide(1)" id="thumb-1" class="border-2 border-transparent bg-white/10 rounded-lg p-1 transition-all opacity-60">
-                                <span class="block text-[10px] text-center font-bold text-white uppercase">Lateral</span>
-                            </button>
-                            <button onclick="setSlide(2)" id="thumb-2" class="border-2 border-transparent bg-white/10 rounded-lg p-1 transition-all opacity-60">
-                                <span class="block text-[10px] text-center font-bold text-white uppercase">Atrás</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-sand/90 border-b border-teal-900/10">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="p-2 bg-brand-pantone rounded-lg text-white">
+                    <i data-lucide="activity" class="w-6 h-6"></i>
+                </span>
+                <span class="font-bold text-xl tracking-tight text-brand-dark">Método Marinas</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600">
+                <a href="#filosofia" class="hover:text-brand-pantone transition">Filosofía</a>
+                <a href="#metodo" class="hover:text-brand-pantone transition">El Método</a>
+                <a href="#programa" class="hover:text-brand-pantone transition">Programa 8 Semanas</a>
+                <a href="#test" class="hover:text-brand-pantone transition">Auto-Test</a>
+            </nav>
+            <div>
+                <a href="#test" class="bg-brand-pantone text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-brand-dark transition shadow-md hidden sm:inline-block">
+                    Hacer Diagnóstico Gratis
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- ESTADO DE LA CONEXIÓN DE BASE DE DATOS -->
-    <div id="db-loader" class="bg-brand-navy text-white text-center py-2 text-xs font-semibold flex items-center justify-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-ping"></span>
-        Sincronizando números disponibles con la nube en tiempo real...
-    </div>
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 overflow-hidden gradient-bg">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Text Content -->
+            <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center space-x-2 bg-emerald-100 border border-emerald-200 text-brand-dark px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Acompañamiento Premium Cuerpo & Mente</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Desbloqueá tu cuerpo de la ansiedad y el <span class="text-brand-pantone underline decoration-brand-accent decoration-wavy decoration-2 underline-offset-4">estrés crónico</span>.
+                </h1>
+                
+                <p class="text-lg text-slate-600 max-w-xl mx-auto md:mx-0">
+                    Tu cuerpo almacena el estrés que tu mente no puede procesar. Con el <strong>Método Marinas</strong>, usamos el movimiento somático e inteligente para resetear tu sistema nervioso, liberar tensiones acumuladas y devolverte el control de tu bienestar.
+                </p>
 
-    <main class="max-w-6xl mx-auto px-4 py-8">
-        <!-- SECCIÓN: PASOS PARA PARTICIPAR -->
-        <section class="mb-10">
-            <h2 class="text-xl font-bold text-brand-navy mb-4 text-center md:text-left flex items-center gap-2">
-                <span class="flex items-center justify-center bg-brand-gold text-brand-navy rounded-full w-6 h-6 text-sm">💡</span>
-                ¿Cómo funciona el sistema de reserva directa?
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex gap-3 items-start">
-                    <span class="text-brand-gold text-2xl font-black">1.</span>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-sm">Elegís tus números</h3>
-                        <p class="text-xs text-slate-500">Tocás los números que más te gusten. Si están en gris, ya fueron vendidos o reservados por otra persona.</p>
-                    </div>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                    <a href="#test" class="w-full sm:w-auto bg-brand-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-accentHover transition shadow-lg hover:shadow-brand-accent/20 hover:-translate-y-0.5 transform flex items-center justify-center space-x-2">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        <span>Medir mi Nivel de Estrés</span>
+                    </a>
+                    <a href="#metodo" class="w-full sm:w-auto border-2 border-slate-300 text-slate-700 hover:border-brand-pantone hover:text-brand-pantone px-8 py-4 rounded-xl font-semibold text-lg transition flex items-center justify-center space-x-2">
+                        <span>Conocer el Método</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex gap-3 items-start">
-                    <span class="text-brand-gold text-2xl font-black">2.</span>
+
+                <!-- Small Trust Badges -->
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 text-left max-w-md mx-auto md:mx-0">
                     <div>
-                        <h3 class="font-bold text-slate-900 text-sm">Completás tus datos</h3>
-                        <p class="text-xs text-slate-500">Ingresás tu nombre y celular para asignarte formalmente la reserva en la base de datos de la web.</p>
+                        <p class="font-extrabold text-2xl text-brand-dark">Foco en</p>
+                        <p class="text-xs text-slate-500 font-medium">Sistema Nervioso</p>
                     </div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex gap-3 items-start">
-                    <span class="text-brand-gold text-2xl font-black">3.</span>
                     <div>
-                        <h3 class="font-bold text-slate-900 text-sm">Confirmás por WhatsApp</h3>
-                        <p class="text-xs text-slate-500">El sistema te abre el chat con los datos listos. Nos mandás el comprobante de pago y te confirmamos al instante.</p>
+                        <p class="font-extrabold text-2xl text-brand-dark">Liberación</p>
+                        <p class="text-xs text-slate-500 font-medium">Física y Mental</p>
+                    </div>
+                    <div>
+                        <p class="font-extrabold text-2xl text-brand-dark">Seguimiento</p>
+                        <p class="text-xs text-slate-500 font-medium">Personalizado 1-a-1</p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- SECCIÓN DE SELECCIÓN DE NÚMEROS -->
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <!-- PANEL TABLERO (IZQUIERDO) -->
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 md:p-6">
+            <!-- Right Visual Interactive Card -->
+            <div class="md:col-span-5 relative">
+                <div class="absolute inset-0 bg-brand-pantone/10 rounded-3xl transform rotate-3 blur-sm"></div>
+                <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-teal-900/5 space-y-6">
+                    <h3 class="font-bold text-xl text-slate-900 flex items-center gap-2">
+                        <i data-lucide="heart-pulse" class="text-brand-accent"></i> ¿Qué síntoma físico sentís hoy?
+                    </h3>
+                    <p class="text-sm text-slate-500">El estrés no es solo una idea, se manifiesta en músculos específicos. Seleccioná dónde sentís la tensión:</p>
                     
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <h2 class="text-2xl font-black text-brand-navy">Tablero Oficial</h2>
-                                <span id="admin-indicator" class="hidden text-[10px] font-bold bg-purple-600 text-white px-2 py-0.5 rounded-full animate-bounce">MODO ADMIN ACTIVO</span>
+                    <div class="space-y-3" id="symptoms-container">
+                        <button onclick="selectSymptom('psoas')" id="sym-psoas" class="w-full p-4 text-left rounded-xl border border-slate-100 hover:border-brand-pantone bg-brand-light/30 hover:bg-brand-light transition flex justify-between items-center group">
+                            <div>
+                                <h4 class="font-semibold text-brand-dark text-sm">Cadera bloqueada / Músculo Psoas</h4>
+                                <p class="text-xs text-slate-500">Sentir rigidez al levantarte o acumular presión en la zona lumbar.</p>
                             </div>
-                            <p class="text-xs text-slate-400">Podés navegar entre los rangos para ver los 1000 números.</p>
-                        </div>
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-brand-pantone transition"></i>
+                        </button>
                         
-                        <!-- Buscador -->
-                        <div class="relative max-w-xs">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                            </span>
-                            <input type="number" id="search-input" min="0" max="999" placeholder="Buscar número (ej: 775)" 
-                                class="w-full pl-9 pr-4 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue"
-                                oninput="filterNumbers()">
-                        </div>
+                        <button onclick="selectSymptom('pecho')" id="sym-pecho" class="w-full p-4 text-left rounded-xl border border-slate-100 hover:border-brand-pantone bg-brand-light/30 hover:bg-brand-light transition flex justify-between items-center group">
+                            <div>
+                                <h4 class="font-semibold text-brand-dark text-sm">Pecho cerrado / Mandíbula apretada</h4>
+                                <p class="text-xs text-slate-500">Dificultad para respirar profundo o tensión en el cuello y rostro.</p>
+                            </div>
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-brand-pantone transition"></i>
+                        </button>
+
+                        <button onclick="selectSymptom('apatia')" id="sym-apatia" class="w-full p-4 text-left rounded-xl border border-slate-100 hover:border-brand-pantone bg-brand-light/30 hover:bg-brand-light transition flex justify-between items-center group">
+                            <div>
+                                <h4 class="font-semibold text-brand-dark text-sm">Pesadez general / Fatiga del Sistema</h4>
+                                <p class="text-xs text-slate-500">Despertarte ya cansado/a, con el cuerpo pesado y sin ganas de moverte.</p>
+                            </div>
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-brand-pantone transition"></i>
+                        </button>
                     </div>
 
-                    <!-- Referencias de Estado -->
-                    <div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 mb-4 border-b border-slate-100 pb-3">
-                        <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-white border border-slate-300 inline-block"></span> Disponible
-                        </span>
-                        <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-brand-gold text-brand-navy inline-block text-center text-[10px] font-bold">✓</span> Seleccionado por vos
-                        </span>
-                        <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-amber-400 opacity-80 inline-block"></span> Reservado (Pendiente Pago)
-                        </span>
-                        <span class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-slate-400 opacity-60 inline-block"></span> Vendido (Pago Completado)
-                        </span>
+                    <!-- Interactive response area -->
+                    <div id="symptom-response" class="hidden p-4 rounded-xl bg-teal-50 border border-teal-200 text-sm space-y-2">
+                        <h5 class="font-bold text-brand-dark flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-brand-accent"></i> Enfoque Método Marinas:
+                        </h5>
+                        <p id="symptom-text" class="text-slate-600 leading-relaxed"></p>
                     </div>
-
-                    <!-- Rangos en Pestañas -->
-                    <div class="flex overflow-x-auto gap-1 mb-4 pb-2 scrollbar-none no-select" id="tabs-container">
-                        <!-- Generado por JS -->
-                    </div>
-
-                    <!-- Grilla de Botones -->
-                    <div class="grid grid-cols-5 sm:grid-cols-10 gap-2 max-h-[400px] overflow-y-auto p-1 border border-slate-100 rounded-lg no-select" id="numbers-grid">
-                        <!-- Generado por JS -->
-                    </div>
-                    
                 </div>
             </div>
 
-            <!-- PANEL RESERVA (DERECHO) -->
-            <div class="lg:col-span-1">
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-5 sticky top-4 space-y-6">
-                    <div>
-                        <h3 class="text-lg font-black text-brand-navy flex items-center gap-2">
-                            🛒 Mi Compra
-                        </h3>
-                        <p class="text-xs text-slate-400">Verificá tu selección antes de enviar.</p>
-                    </div>
+        </div>
+    </section>
 
-                    <!-- Caja de Selección -->
-                    <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 min-h-[80px] flex flex-col justify-between">
-                        <div class="text-xs text-slate-400 mb-2">Números elegidos:</div>
-                        <div id="selected-list" class="flex flex-wrap gap-1.5">
-                            <span class="text-xs text-slate-400 italic">No seleccionaste ningún número aún.</span>
-                        </div>
-                    </div>
-
-                    <!-- Resumen de Costos -->
-                    <div class="border-t border-slate-100 pt-4 space-y-2">
-                        <div class="flex justify-between text-xs text-slate-500">
-                            <span>Cantidad:</span>
-                            <span class="font-bold" id="resumen-cantidad">0</span>
-                        </div>
-                        <div class="flex justify-between text-xs text-slate-500">
-                            <span>Precio por número:</span>
-                            <span class="font-bold">$12.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-slate-800 pt-2 border-t border-dashed border-slate-200">
-                            <span class="text-sm font-bold text-brand-navy">Total a abonar:</span>
-                            <span class="text-2xl font-black text-brand-success" id="resumen-total">$0</span>
-                        </div>
-                    </div>
-
-                    <!-- Datos del Comprador -->
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1">Nombre Completo *</label>
-                            <input type="text" id="buyer-name" placeholder="Ej: Juan Pérez" 
-                                class="w-full text-sm px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1">Teléfono con WhatsApp *</label>
-                            <input type="tel" id="buyer-phone" placeholder="Ej: 11 7109 1307" 
-                                class="w-full text-sm px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue">
-                        </div>
-                    </div>
-
-                    <!-- Botón de Envío -->
-                    <button onclick="requestReservation()" class="w-full py-4 bg-brand-success hover:bg-emerald-600 text-white font-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-base">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.6.95 3.198 1.451 4.85 1.453 5.464 0 9.903-4.44 9.907-9.911.002-2.65-1.03-5.143-2.902-7.019C16.632 1.799 14.137.769 11.49.769c-5.468 0-9.907 4.442-9.911 9.914-.001 1.724.456 3.41 1.32 4.916l-.995 3.634 3.723-.976zm11.365-6.864c-.29-.146-1.714-.846-1.979-.942-.266-.096-.459-.144-.652.146-.194.291-.748.942-.917 1.135-.169.193-.338.217-.628.072-.29-.145-1.226-.452-2.335-1.442-.863-.77-1.446-1.72-1.616-2.011-.17-.291-.018-.448.127-.592.13-.13.29-.339.435-.509.145-.17.193-.291.29-.485.097-.194.049-.364-.025-.509-.072-.146-.652-1.573-.893-2.155-.235-.568-.473-.49-.652-.499-.17-.008-.363-.01-.556-.01-.193 0-.507.073-.772.364-.266.291-1.014.992-1.014 2.422 0 1.43 1.039 2.812 1.184 3.006.145.194 2.045 3.123 4.954 4.382.692.3 1.232.479 1.653.613.696.222 1.329.191 1.83.116.558-.083 1.714-.701 1.956-1.378.24-.677.24-1.258.17-1.378-.073-.12-.266-.194-.556-.34z"/></svg>
-                        Reservar y pagar vía WhatsApp
-                    </button>
-                </div>
+    <!-- Sección de Empatía y Conexión Científica -->
+    <section id="filosofia" class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 space-y-12">
+            <div class="text-center space-y-4">
+                <span class="text-brand-accent font-bold text-xs uppercase tracking-wider">La base del Método</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">¿Por qué el fitness convencional te estresa más?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Cuando tu sistema nervioso está saturado por el trabajo, la incertidumbre o el trauma acumulado, ir al gimnasio a "destruirte" solo le dice a tu cerebro que estás en un peligro aún mayor. El resultado: más cortisol, peor descanso y más rigidez.
+                </p>
             </div>
-        </section>
-
-        <!-- INFORMACIÓN / TRANSPARENCIA -->
-        <section class="mt-12 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 max-w-4xl mx-auto">
-            <h2 class="text-2xl font-black text-brand-navy mb-6 text-center">Transparencia e Información del Sorteo</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-4">
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-sm text-slate-800 mb-1">🎟️ ¿Cómo funciona el sorteo?</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            El ganador será el titular del número que coincida exactamente con las **últimas 3 cifras** del primer premio de la **Lotería de la Ciudad de Buenos Aires (Nocturna)** en la fecha que se fije una vez vendidos los números.
-                        </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+                <div class="p-6 rounded-2xl bg-brand-sand/50 space-y-3 border border-slate-100">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-pantone rounded-full flex items-center justify-center">
+                        <i data-lucide="flame" class="w-6 h-6"></i>
                     </div>
-
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-sm text-slate-800 mb-1">📅 ¿Cuándo se realiza el sorteo?</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            La fecha definitiva se anunciará a todos los compradores por WhatsApp/Redes Sociales con una anticipación mínima de una semana antes del sorteo en vivo.
-                        </p>
-                    </div>
+                    <h3 class="font-bold text-slate-900">Sobreactivación (Alerta)</h3>
+                    <p class="text-sm text-slate-600">Estás en un estado constante de lucha o huida. Tu mandíbula, hombros y diafragma están contracturados de forma crónica.</p>
                 </div>
-
-                <div class="space-y-4">
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-sm text-slate-800 mb-1">💳 ¿Cómo abono mis números?</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Al hacer clic en reservar, te comunicará directo con el organizador donde podrás pagar por **Mercado Pago, transferencia bancaria (CBU/Alias)** o efectivo. Se te enviará el comprobante digital personalizado.
-                        </p>
+                <div class="p-6 rounded-2xl bg-brand-sand/50 space-y-3 border border-slate-100">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-pantone rounded-full flex items-center justify-center">
+                        <i data-lucide="snowflake" class="w-6 h-6"></i>
                     </div>
-
-                    <div class="bg-slate-50 p-4 border-2 border-brand-gold/40 bg-yellow-50/30 rounded-xl">
-                        <h4 class="font-bold text-sm text-brand-navy mb-1 flex items-center gap-1.5">
-                            🚗 Gastos de Gestoría y Transferencia ¡Bonificados!
-                        </h4>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            <strong>¡No gastás un peso extra!</strong> El organizador de la rifa se hace cargo del 100% de la transferencia, gestoría, honorarios de firmas y todo el trámite legal necesario para poner el auto a tu nombre. Se entrega con papeles totalmente al día y listo para disfrutar.
-                        </p>
+                    <h3 class="font-bold text-slate-900">Bloqueo (Congelamiento)</h3>
+                    <p class="text-sm text-slate-600">Cuando el estrés supera tu límite, te congelás. Aparece la procrastinación, la fatiga extrema y la apatía absoluta.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-sand/50 space-y-3 border border-slate-100">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-pantone rounded-full flex items-center justify-center">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
                     </div>
+                    <h3 class="font-bold text-slate-900">Regulación Somática</h3>
+                    <p class="text-sm text-slate-600">La solución de mi método: usar el movimiento pausado, progresivo y consciente para indicarle a tu sistema que puede relajarse.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- MODAL DE ADMINISTRACIÓN (GESTIÓN DE ESTADOS) -->
-    <div id="admin-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden">
-            <div class="bg-brand-navy text-white p-4 flex justify-between items-center">
-                <h3 class="font-black text-base flex items-center gap-1.5">
-                    ⚙️ Gestión de Número <span id="modal-num-title" class="text-brand-gold font-extrabold text-lg">000</span>
-                </h3>
-                <button onclick="closeAdminModal()" class="text-white hover:text-red-400 font-bold text-lg">×</button>
+    <!-- El Método Marinas desglosado -->
+    <section id="metodo" class="py-20 bg-brand-sand">
+        <div class="max-w-6xl mx-auto px-4 space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <h2 class="text-4xl font-extrabold text-slate-900">Los 3 Pilares del Método Marinas</h2>
+                <p class="text-lg text-slate-600">No entrenamos para quemar calorías, entrenamos para devolverle la paz a tu mente a través de la inteligencia biológica.</p>
             </div>
-            <div class="p-5 space-y-4">
-                <!-- Información del comprador si tiene reserva -->
-                <div id="modal-buyer-box" class="bg-slate-50 rounded-xl p-3.5 border border-slate-200 space-y-1.5 text-xs">
-                    <div class="text-slate-400 font-bold uppercase tracking-wider text-[10px]">Datos de Reserva:</div>
-                    <div>👤 <strong>Nombre:</strong> <span id="modal-buyer-name" class="text-slate-700">Ninguno</span></div>
-                    <div>📞 <strong>Teléfono:</strong> <span id="modal-buyer-phone" class="text-slate-700">Ninguno</span></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pilar 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <span class="w-12 h-12 bg-brand-light text-brand-pantone rounded-xl flex items-center justify-center font-bold text-xl">01</span>
+                    <h3 class="font-bold text-xl text-slate-900">Movimiento de Liberación</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ejercicios específicos de descompresión somática. Nos enfocamos en las zonas clave donde se acumulan las emociones no procesadas: cadera (psoas), espalda baja, diafragma y cuello. Liberar el cuerpo es el primer paso para liberar la mente.
+                    </p>
+                </div>
+                <!-- Pilar 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <span class="w-12 h-12 bg-brand-light text-brand-pantone rounded-xl flex items-center justify-center font-bold text-xl">02</span>
+                    <h3 class="font-bold text-xl text-slate-900">Estimulación del Nervio Vago</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Integramos técnicas de respiración rítmica y ejercicios posturales de bajo impacto que activan tu sistema parasimpático de inmediato. Es el interruptor biológico que apaga la ansiedad y baja las pulsaciones.
+                    </p>
+                </div>
+                <!-- Pilar 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <span class="w-12 h-12 bg-brand-light text-brand-pantone rounded-xl flex items-center justify-center font-bold text-xl">03</span>
+                    <h3 class="font-bold text-xl text-slate-900">Mentalidad y Hábitos Sostenibles</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Te enseño a escuchar tu cuerpo. Diseñamos planes que se adaptan a tus días de alta y baja energía. Si un día estás drenado/a, el método cambia a una sesión restaurativa. Aquí no existe la culpa ni la autoexigencia tóxica.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Programa de Acompañamiento Semanal -->
+    <section id="programa" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <h2 class="text-4xl font-extrabold text-slate-900">Tu Ruta de Regulación (8 Semanas)</h2>
+                <p class="text-lg text-slate-600">Un acompañamiento cercano y diario diseñado para transformar tu fisiología por completo.</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-teal-100 ml-4 md:ml-32 space-y-12">
+                <!-- Week 1-2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-3 top-1 bg-brand-pantone w-6 h-6 rounded-full border-4 border-white flex items-center justify-center shadow-sm"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                        <div class="md:col-span-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Semanas 1 y 2</span>
+                            <h4 class="font-bold text-lg text-slate-900">Evaluación y Descompresión</h4>
+                        </div>
+                        <div class="md:col-span-9 text-slate-600 text-sm leading-relaxed">
+                            Sesión inicial uno a uno. Analizamos tus patrones de estrés físico y postural. Empezamos con micro-rutinas somáticas de 10 minutos enfocadas en desbloquear el diafragma, mejorar el flujo respiratorio y aliviar tensiones profundas.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="space-y-2">
-                    <label class="block text-xs font-bold text-slate-500 uppercase">Cambiar Estado:</label>
-                    <div class="grid grid-cols-3 gap-2">
-                        <button onclick="setTicketState('disponible')" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-lg transition">
-                            🔓 Disponible
-                        </button>
-                        <button onclick="setTicketState('reservado')" class="py-2.5 bg-amber-400 hover:bg-amber-500 text-brand-navy text-xs font-bold rounded-lg transition">
-                            ⏳ Reservado
-                        </button>
-                        <button onclick="setTicketState('vendido')" class="py-2.5 bg-slate-400 hover:bg-slate-500 text-white text-xs font-bold rounded-lg transition">
-                            🔒 Vendido
-                        </button>
+                <!-- Week 3-4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-3 top-1 bg-brand-pantone w-6 h-6 rounded-full border-4 border-white flex items-center justify-center shadow-sm"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                        <div class="md:col-span-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Semanas 3 y 4</span>
+                            <h4 class="font-bold text-lg text-slate-900">Activación del Nervio Vago</h4>
+                        </div>
+                        <div class="md:col-span-9 text-slate-600 text-sm leading-relaxed">
+                            Introducimos ejercicios específicos para flexibilizar la columna y liberar la cadera (el psoas, también conocido como el músculo del alma y el estrés). Tu cuerpo empieza a asimilar que moverse es sinónimo de seguridad, no de peligro.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5-6 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-3 top-1 bg-brand-pantone w-6 h-6 rounded-full border-4 border-white flex items-center justify-center shadow-sm"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                        <div class="md:col-span-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Semanas 5 y 6</span>
+                            <h4 class="font-bold text-lg text-slate-900">Fuerza y Estabilidad Consciente</h4>
+                        </div>
+                        <div class="md:col-span-9 text-slate-600 text-sm leading-relaxed">
+                            Ganamos tono muscular e integridad física sin alterar el sistema nervioso. Empezamos a entrenar la fuerza desde la propiocepción y el control motor. Empezás a notar un aumento real en tu energía diaria y tu foco mental.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7-8 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-3 top-1 bg-brand-pantone w-6 h-6 rounded-full border-4 border-white flex items-center justify-center shadow-sm"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                        <div class="md:col-span-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600">Semanas 7 y 8</span>
+                            <h4 class="font-bold text-lg text-slate-900">Anclaje del Hábito Somático</h4>
+                        </div>
+                        <div class="md:col-span-9 text-slate-600 text-sm leading-relaxed">
+                            Automatizamos tu rutina de bienestar. Sabrás exactamente qué movimientos o respiraciones usar según cómo te despiertes cada día. Alcanzás una autonomía total sobre tu cuerpo y tu salud mental, libre del estrés del pasado.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- NOTIFICACIONES INLINE (TOASTS) -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-navy text-white text-sm py-3 px-5 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none flex items-center gap-2">
-        <span id="toast-message">Mensaje</span>
-    </div>
+    <!-- TEST INTERACTIVO DIAGNÓSTICO (Convertidor de leads de TikTok) -->
+    <section id="test" class="py-20 bg-brand-light/70 relative">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-teal-900/10 space-y-8">
+                
+                <div class="text-center space-y-2" id="quiz-intro">
+                    <span class="text-brand-accent font-bold text-sm uppercase tracking-wider">Test de Regulación</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900">¿Cómo está tu Sistema Nervioso hoy?</h2>
+                    <p class="text-slate-600 text-sm">Respondé estas 4 preguntas rápidas del Método Marinas para descubrir si estás en estado de alerta, congelamiento o equilibrio.</p>
+                </div>
 
-    <!-- PIE DE PÁGINA -->
-    <footer class="bg-brand-navy text-slate-400 py-6 text-center text-xs mt-12 border-t border-slate-800">
-        <p>© 2026 Rifa Ford Ka - Patente JSI 775. Todos los derechos reservados.</p>
-        <button onclick="askAdminAccess()" class="mt-2 text-slate-600 hover:text-brand-gold transition duration-200 text-[11px] font-semibold underline block mx-auto">
-            ⚙️ Acceso Administrador (Clave: 775)
-        </button>
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div id="quiz-progress" class="bg-brand-pantone h-full transition-all duration-300" style="width: 25%"></div>
+                </div>
+
+                <!-- Quiz Form Step-by-Step -->
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Question 1 -->
+                    <div id="q1" class="quiz-step space-y-4">
+                        <h3 class="font-bold text-xl text-slate-900">1. ¿Qué sentís en tu cuerpo la mayor parte de tu día?</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="answerQuestion(1, 'Ansiedad, pecho apretado o mente acelerada')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Ansiedad, pecho apretado o mente acelerada
+                            </button>
+                            <button onclick="answerQuestion(1, 'Pesadez, apatía profunda y sueño que no repara')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Pesadez, apatía profunda y sueño que no repara
+                            </button>
+                            <button onclick="answerQuestion(1, 'Rigidez en hombros, mandíbula o dolor de cabeza')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Rigidez en hombros, mandíbula o dolor de cabeza
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 (Hidden Initially) -->
+                    <div id="q2" class="quiz-step hidden space-y-4">
+                        <h3 class="font-bold text-xl text-slate-900">2. Al intentar hacer ejercicio convencional...</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="answerQuestion(2, 'Me da pereza extrema y no logro arrancar')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Me da pereza extrema y no logro arrancar
+                            </button>
+                            <button onclick="answerQuestion(2, 'Me canso rápido y me frustro por no tener energía')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Me canso rápido y me frustro por no tener energía
+                            </button>
+                            <button onclick="answerQuestion(2, 'Termino más estresado/a y con dolor corporal')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Termino más estresado/a y con dolor corporal
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 (Hidden Initially) -->
+                    <div id="q3" class="quiz-step hidden space-y-4">
+                        <h3 class="font-bold text-xl text-slate-900">3. ¿Cómo está tu nivel de rumiación (pensamientos repetitivos)?</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <button onclick="answerQuestion(3, 'Altísimo, no puedo parar de pensar en pendientes o problemas')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Altísimo, no puedo parar de pensar en pendientes o problemas
+                            </button>
+                            <button onclick="answerQuestion(3, 'Moderado, pero me quita mucha energía por las noches')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Moderado, pero me quita mucha energía por las noches
+                            </button>
+                            <button onclick="answerQuestion(3, 'Me siento mentalmente embotado/a, como en una nube')" class="q-option p-4 text-left rounded-xl border-2 border-slate-100 hover:border-brand-pantone hover:bg-brand-light/30 transition font-medium text-slate-700">
+                                Me siento mentalmente embotado/a, como en una nube
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 (Hidden Initially) -->
+                    <div id="q4" class="quiz-step hidden space-y-4">
+                        <h3 class="font-bold text-xl text-slate-900">4. ¿Cuál es tu nombre? (Para personalizar tu asesoría)</h3>
+                        <div class="space-y-4">
+                            <input type="text" id="client-name" placeholder="Escribí tu nombre acá..." class="w-full p-4 rounded-xl border-2 border-slate-200 focus:border-brand-pantone focus:outline-none text-slate-800 font-semibold text-lg">
+                            <button onclick="submitQuiz()" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white py-4 rounded-xl font-bold text-lg transition shadow-md flex items-center justify-center space-x-2">
+                                <span>Ver Diagnóstico & Contactarme</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Finished screen -->
+                    <div id="quiz-result" class="hidden text-center space-y-6 py-6">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                            <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-2xl text-slate-900">¡Diagnóstico Listo, <span id="display-name" class="text-brand-pantone"></span>!</h3>
+                            <p class="text-slate-600 max-w-md mx-auto">Tus respuestas indican una clara sobrecarga en tu sistema nervioso. Necesitás un enfoque somático regulador inmediato para drenar el estrés muscular.</p>
+                        </div>
+                        <div class="bg-brand-sand p-6 rounded-2xl border border-slate-100 max-w-md mx-auto text-left space-y-3">
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Tu perfil de respuestas:</p>
+                            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+                                <li><strong>Síntoma principal:</strong> <span id="r-sintoma"></span></li>
+                                <li><strong>Resistencia al ejercicio:</strong> <span id="r-ejercicio"></span></li>
+                                <li><strong>Carga mental:</strong> <span id="r-sueno"></span></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3">
+                            <button onclick="sendToWhatsApp()" class="w-full max-w-md bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-bold text-lg transition shadow-lg flex items-center justify-center space-x-2 mx-auto">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                                <span>Enviar Resultados por WhatsApp</span>
+                            </button>
+                            <p class="text-xs text-slate-500">Hacé clic arriba para abrir WhatsApp y reservar tu sesión gratuita de diagnóstico de 15 minutos conmigo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios e Inversión -->
+    <section class="py-20 bg-brand-sand">
+        <div class="max-w-4xl mx-auto px-4 space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-4xl font-extrabold text-slate-900">Acompañamiento Exclusivo</h2>
+                <p class="text-lg text-slate-600">Un programa premium diseñado para cambiar tu relación con tu cuerpo de raíz.</p>
+            </div>
+
+            <!-- Card High-Ticket (The premium path) -->
+            <div class="bg-gradient-to-br from-brand-dark to-brand-pantone text-white rounded-3xl p-8 md:p-12 shadow-xl border border-teal-800 space-y-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-6 opacity-10">
+                    <i data-lucide="sparkles" class="w-40 h-40"></i>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div>
+                        <span class="bg-brand-accent text-white font-bold text-xs uppercase px-3 py-1 rounded-full tracking-wider">Método Marinas Premium</span>
+                        <h3 class="text-3xl font-extrabold mt-2">Acompañamiento 1-a-1 de 8 Semanas</h3>
+                        <p class="text-teal-100 text-sm mt-1 max-w-lg">Trabajamos estrechamente para desarmar los patrones de ansiedad física y restaurar tu sistema de forma duradera.</p>
+                    </div>
+                    <div class="text-left md:text-right bg-brand-dark/50 p-4 rounded-2xl border border-teal-700">
+                        <p class="text-xs text-teal-200 font-semibold uppercase tracking-wider">Inversión total</p>
+                        <p class="text-3xl font-black mt-1">Consultar Programa</p>
+                        <p class="text-xs text-teal-300">Vacantes muy limitadas cada mes</p>
+                    </div>
+                </div>
+
+                <hr class="border-teal-800">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ul class="space-y-3.5 text-sm">
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check" class="text-brand-accent w-5 h-5 flex-shrink-0"></i>
+                            <span>Evaluación y mapeo inicial de rigidez somática</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check" class="text-brand-accent w-5 h-5 flex-shrink-0"></i>
+                            <span>Plan personalizado de movimiento regulador semanal</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check" class="text-brand-accent w-5 h-5 flex-shrink-0"></i>
+                            <span>Ejercicios SOS de respiración para frenar crisis de pánico</span>
+                        </li>
+                    </ul>
+                    <ul class="space-y-3.5 text-sm">
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check" class="text-brand-accent w-5 h-5 flex-shrink-0"></i>
+                            <span>Acceso directo y diario a mí vía WhatsApp</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check" class="text-brand-accent w-5 h-5 flex-shrink-0"></i>
+                            <span>Ajustes en el día según tus niveles reales de energía</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check" class="text-brand-accent w-5 h-5 flex-shrink-0"></i>
+                            <span>Sesiones virtuales de reajuste y control cada quincena</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-4 text-center">
+                    <a href="#test" class="inline-flex bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg items-center space-x-2">
+                        <span>Quiero postularme y agendar llamada gratis</span>
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                    <p class="text-xs text-teal-200 mt-2">Solo acepto 8 nuevos clientes por mes para asegurar un acompañamiento real, íntimo y profundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 space-y-12">
+            <h2 class="text-3xl font-extrabold text-slate-900 text-center">Dudas habituales</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-slate-200 rounded-2xl p-6 space-y-2">
+                    <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center text-left font-bold text-slate-900 focus:outline-none">
+                        <span>¿Necesito tener experiencia previa con yoga o ejercicio?</span>
+                        <i id="faq-icon-1" data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform"></i>
+                    </button>
+                    <p id="faq-ans-1" class="hidden text-sm text-slate-600 leading-relaxed pt-2">
+                        Para nada. De hecho, si nunca entrenaste o si le tenés miedo al ejercicio clásico, este es tu lugar ideal. No hacemos movimientos complejos ni acrobáticos. El movimiento somático se basa en sentir el cuerpo y habilitar la movilidad natural de manera suave y progresiva.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-slate-200 rounded-2xl p-6 space-y-2">
+                    <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center text-left font-bold text-slate-900 focus:outline-none">
+                        <span>¿Cuánto tiempo al día necesito dedicarle?</span>
+                        <i id="faq-icon-2" data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform"></i>
+                    </button>
+                    <p id="faq-ans-2" class="hidden text-sm text-slate-600 leading-relaxed pt-2">
+                        Solo entre 10 y 15 minutos diarios. El secreto del sistema nervioso no es el volumen de horas, sino la frecuencia y la calidad de la señal que le enviás. Es preferible que hagas un ejercicio somático de 10 minutos cada día a que hagas 1 hora entera solo los domingos.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-slate-200 rounded-2xl p-6 space-y-2">
+                    <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center text-left font-bold text-slate-900 focus:outline-none">
+                        <span>¿Qué pasa si un día tengo demasiada ansiedad o estoy deprimido/a?</span>
+                        <i id="faq-icon-3" data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform"></i>
+                    </button>
+                    <p id="faq-ans-3" class="hidden text-sm text-slate-600 leading-relaxed pt-2">
+                        Ahí es exactamente cuando más te sirve mi acompañamiento. Me mandás un WhatsApp y adaptamos tu día de inmediato. En lugar de una rutina activa, te daré un protocolo de descompresión en cama o ejercicios de estimulación del nervio vago para regular el estado de ánimo. El programa se adapta a vos, no vos a él.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2 text-white">
+                    <span class="p-2 bg-brand-pantone rounded-lg">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </span>
+                    <span class="font-bold text-lg">Método Marinas</span>
+                </div>
+                <p class="text-sm">Asesoría de movimiento somático y bienestar emocional de alto nivel. Diseñada para desarmar el estrés del día a día.</p>
+            </div>
+            <div></div>
+            <div class="space-y-2">
+                <h4 class="font-bold text-white text-sm">Aviso Importante</h4>
+                <p class="text-xs leading-relaxed">
+                    Este sitio no forma parte de Facebook, Instagram ni de ByteDance Ltd. El Método Marinas es un complemento somático para tu salud. Siempre es recomendable consultar con profesionales médicos y de salud mental certificados.
+                </p>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 pt-8 mt-8 border-t border-slate-800 text-center text-xs">
+            © 2026 Método Marinas. Todos los derechos reservados.
+        </div>
     </footer>
 
-    <!-- LÓGICA DE FIREBASE Y FUNCIONAMIENTO EN TIEMPO REAL -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, onSnapshot, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    <!-- Script de Interactividad y Lógica -->
+    <script>
+        // Inicializar iconos
+        lucide.createIcons();
 
-        // Inicialización de Firebase
-        const firebaseConfig = JSON.parse(__firebase_config);
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'ford-ka-rifa';
+        // REEMPLAZAR ESTO CON TU NÚMERO DE CELULAR DE WHATSAPP REAL (Ej: "5491122334455")
+        const NUMERO_WHATSAPP = "5491122334455"; 
 
-        // Configuración de la Rifa
-        const WHATSAPP_CONTACT = "5491171091307"; // Tu número de WhatsApp real
-        const TICKET_PRICE = 12000;
-        const TOTAL_NUMBERS = 1000;
-
-        let selectedNumbers = [];
-        let currentSlide = 0;
-        let activeTabRange = 0;
-        let user = null;
-
-        let ticketReservations = {}; 
-        let isAdmin = false;
-        let activeAdminNum = null;
-
-        // Rangos de pestañas
-        const ranges = [
-            { label: "000 - 199", start: 0, end: 199 },
-            { label: "200 - 399", start: 200, end: 399 },
-            { label: "400 - 550", start: 400, end: 550 },
-            { label: "551 - 749", start: 551, end: 749 },
-            { label: "750 - 999", start: 750, end: 999 }
-        ];
-
-        // Autenticación según las reglas de Canvas (Auth antes de cualquier consulta)
-        const initAuth = async () => {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-            } catch (e) {
-                console.error("Error en Firebase Auth:", e);
-                showToast("⚠️ Error al conectar con la base de datos.");
-            }
+        // Respuestas de la demo interactiva del Hero
+        const responses = {
+            psoas: "El psoas almacena gran parte de la tensión de la huida y del miedo. Al sentarnos muchas horas, este músculo se acorta e indica a tu cerebro que estás bajo peligro inminente. El Método Marinas incluye estiramientos somáticos específicos para descomprimir la cadera y mandar una señal inmediata de seguridad neural.",
+            pecho: "El diafragma y la mandíbula se cierran automáticamente cuando contenés las emociones y el estrés para 'aguantar'. Te enseñaré automasajes en la ATM (mandíbula) y técnicas de liberación de las fascias costales para abrir el diafragma y permitirte respirar profundo nuevamente de manera involuntaria.",
+            apatia: "El congelamiento corporal es una defensa extrema del sistema nervioso ante la sobrecarga constante de preocupaciones. No te exigiremos esfuerzo brutal. Empezamos con micro-movimientos oscilatorios de estimulación sensorial para reactivar sutilmente tu energía vital y sacarte de ese estado de letargo."
         };
 
-        // Escuchamos el cambio de estado de autenticación y luego iniciamos la base de datos
-        onAuthStateChanged(auth, (loggedUser) => {
-            user = loggedUser;
-            if (user) {
-                listenToReservations();
-            }
-        });
-
-        // Sincronización en tiempo real con ruta de seguridad estricta
-        const getGlobalStateDocRef = () => {
-            return doc(db, 'artifacts', appId, 'public', 'data', 'globalState', 'tickets');
-        };
-
-        const listenToReservations = () => {
-            if (!user) return; // Regla estricta 3 de Canvas
-            const docRef = getGlobalStateDocRef();
-            
-            onSnapshot(docRef, (docSnap) => {
-                if (docSnap.exists()) {
-                    ticketReservations = docSnap.data() || {};
-                } else {
-                    ticketReservations = {};
-                }
-                
-                document.getElementById('db-loader').innerHTML = `
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                    Base de datos conectada en tiempo real
-                `;
-                setTimeout(() => {
-                    document.getElementById('db-loader').classList.add('hidden');
-                }, 2000);
-
-                updateUI();
-            }, (error) => {
-                console.error("Error leyendo Firestore:", error);
-                showToast("⚠️ Sincronizando números... Por favor, esperá un momento.");
+        function selectSymptom(key) {
+            // Deseleccionar todos
+            document.querySelectorAll('#symptoms-container button').forEach(btn => {
+                btn.classList.remove('border-brand-pantone', 'bg-brand-light');
+                btn.classList.add('border-slate-100', 'bg-brand-light/30');
             });
-        };
-
-        // Generar pestañas
-        const initTabs = () => {
-            const container = document.getElementById('tabs-container');
-            container.innerHTML = '';
-            ranges.forEach((range, idx) => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = `flex-none text-xs font-bold py-2 px-4 rounded-lg border transition-all duration-200 ${
-                    activeTabRange === idx 
-                    ? 'bg-brand-blue text-white border-brand-blue shadow-sm' 
-                    : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
-                }`;
-                btn.textContent = range.label;
-                btn.onclick = () => {
-                    activeTabRange = idx;
-                    initTabs();
-                    renderGrid();
-                };
-                container.appendChild(btn);
-            });
-        };
-
-        // Renderizar botones de la grilla
-        const renderGrid = (filterTerm = '') => {
-            const grid = document.getElementById('numbers-grid');
-            grid.innerHTML = '';
-
-            const range = ranges[activeTabRange];
-            let start = range.start;
-            let end = range.end;
-
-            if (filterTerm.trim() !== '') {
-                for (let i = 0; i < TOTAL_NUMBERS; i++) {
-                    const numString = String(i).padStart(3, '0');
-                    if (numString.includes(filterTerm)) {
-                        createNumberButton(i, grid);
-                    }
-                }
-                return;
-            }
-
-            for (let i = start; i <= end; i++) {
-                createNumberButton(i, grid);
-            }
-        };
-
-        const createNumberButton = (num, container) => {
-            const numString = String(num).padStart(3, '0');
-            const reservation = ticketReservations[numString];
-            const isSelected = selectedNumbers.includes(num);
-
-            let btnClass = "bg-white text-slate-700 border-slate-200 hover:border-brand-blue hover:text-brand-blue hover:bg-slate-50";
-            let statusChar = "";
-
-            if (reservation) {
-                if (reservation.status === 'vendido') {
-                    btnClass = "bg-slate-300 text-slate-500 border-slate-300 opacity-60 cursor-not-allowed";
-                    statusChar = "🔒";
-                } else if (reservation.status === 'reservado') {
-                    btnClass = "bg-amber-400 text-brand-navy border-amber-400 font-extrabold";
-                    statusChar = "⏳";
-                }
-            }
-
-            if (isSelected) {
-                btnClass = "bg-brand-gold text-brand-navy border-brand-gold scale-95 ring-2 ring-brand-navy shadow-inner";
-                statusChar = "✓";
-            }
-
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = `aspect-square flex flex-col items-center justify-center font-bold text-xs rounded-lg border transition-all duration-150 relative ${btnClass}`;
+            // Seleccionar el clicado
+            const activeBtn = document.getElementById(`sym-${key}`);
+            activeBtn.classList.add('border-brand-pantone', 'bg-brand-light');
             
-            if (num === 775 && !reservation && !isSelected) {
-                btn.classList.add('animate-pulse', 'border-brand-gold', 'bg-yellow-50');
-            }
+            // Mostrar respuesta
+            const responseBox = document.getElementById('symptom-response');
+            const responseText = document.getElementById('symptom-text');
+            responseText.innerText = responses[key];
+            responseBox.classList.remove('hidden');
+        }
 
-            btn.innerHTML = `
-                <span>${numString}</span>
-                ${statusChar ? `<span class="text-[8px] absolute bottom-0.5">${statusChar}</span>` : ''}
-            `;
-
-            btn.onclick = () => {
-                if (isAdmin) {
-                    openAdminModal(num);
-                } else {
-                    if (reservation && (reservation.status === 'vendido' || reservation.status === 'reservado')) {
-                        showToast(`El número ${numString} ya está reservado o vendido.`);
-                        return;
-                    }
-                    toggleNumber(num);
-                }
-            };
-
-            container.appendChild(btn);
+        // --- SISTEMA DEL TEST INTERACTIVO ---
+        let currentStep = 1;
+        const answers = {
+            sintoma: '',
+            ejercicio: '',
+            sueno: '',
+            nombre: ''
         };
 
-        const toggleNumber = (num) => {
-            const index = selectedNumbers.indexOf(num);
-            if (index > -1) {
-                selectedNumbers.splice(index, 1);
-            } else {
-                selectedNumbers.push(num);
+        function answerQuestion(step, value) {
+            if (step === 1) {
+                answers.sintoma = value;
+                goToStep(2);
+            } else if (step === 2) {
+                answers.ejercicio = value;
+                goToStep(3);
+            } else if (step === 3) {
+                answers.sueno = value;
+                goToStep(4);
             }
-            updateUI();
-        };
+        }
 
-        // Cambiar slider de imágenes
-        const setSlide = (index) => {
-            currentSlide = index;
-            for (let i = 0; i < 3; i++) {
-                const slide = document.getElementById(`slide-${i}`);
-                const thumb = document.getElementById(`thumb-${i}`);
-                if (i === index) {
-                    slide.classList.remove('opacity-0');
-                    thumb.classList.add('border-brand-gold');
-                    thumb.classList.remove('border-transparent', 'opacity-60');
-                } else {
-                    slide.classList.add('opacity-0');
-                    thumb.classList.remove('border-brand-gold');
-                    thumb.classList.add('border-transparent', 'opacity-60');
-                }
-            }
-        };
-
-        // Actualizar formulario y resumen
-        const updateUI = () => {
-            renderGrid(document.getElementById('search-input').value);
-
-            const listContainer = document.getElementById('selected-list');
-            listContainer.innerHTML = '';
-
-            if (selectedNumbers.length === 0) {
-                listContainer.innerHTML = '<span class="text-xs text-slate-400 italic">No seleccionaste ningún número aún.</span>';
-            } else {
-                selectedNumbers.sort((a, b) => a - b).forEach(num => {
-                    const badge = document.createElement('span');
-                    badge.className = 'inline-flex items-center gap-1 py-1 px-2.5 rounded-md text-xs font-bold bg-brand-gold/10 text-brand-navy border border-brand-gold/30';
-                    badge.innerHTML = `
-                        ${String(num).padStart(3, '0')}
-                        <button type="button" class="text-brand-navy hover:text-red-500 font-black ml-1">×</button>
-                    `;
-                    badge.querySelector('button').onclick = (e) => {
-                        e.stopPropagation();
-                        toggleNumber(num);
-                    };
-                    listContainer.appendChild(badge);
-                });
-            }
-
-            const totalCost = selectedNumbers.length * TICKET_PRICE;
-            document.getElementById('resumen-cantidad').textContent = selectedNumbers.length;
-            document.getElementById('resumen-total').textContent = `$${totalCost.toLocaleString('es-AR')}`;
-        };
-
-        // Procesar reserva
-        const requestReservation = async () => {
-            if (!user) {
-                showToast("⚠️ Base de datos no conectada todavía. Intentá de nuevo.");
-                return;
-            }
-
-            const name = document.getElementById('buyer-name').value.trim();
-            const phone = document.getElementById('buyer-phone').value.trim();
-
-            if (selectedNumbers.length === 0) {
-                showToast("⚠️ Seleccioná al menos un número del tablero.");
-                return;
-            }
-            if (!name) {
-                showToast("⚠️ Ingresá tu Nombre Completo.");
-                return;
-            }
-            if (!phone) {
-                showToast("⚠️ Ingresá tu teléfono de contacto.");
-                return;
-            }
-
-            // Verificar conflicto de último segundo en el cliente
-            const conflict = selectedNumbers.find(num => {
-                const numStr = String(num).padStart(3, '0');
-                return ticketReservations[numStr] !== undefined;
-            });
-
-            if (conflict !== undefined) {
-                showToast(`⚠️ El número ${String(conflict).padStart(3, '0')} fue reservado por otro usuario recién.`);
-                return;
-            }
-
-            // Registrar en base de datos
-            try {
-                const updatedReservations = { ...ticketReservations };
-                selectedNumbers.forEach(num => {
-                    const numStr = String(num).padStart(3, '0');
-                    updatedReservations[numStr] = {
-                        status: 'reservado',
-                        name: name,
-                        phone: phone,
-                        timestamp: Date.now()
-                    };
-                });
-
-                await setDoc(getGlobalStateDocRef(), updatedReservations);
-
-                const numStrings = selectedNumbers.map(n => String(n).padStart(3, '0')).join(', ');
-                const total = (selectedNumbers.length * TICKET_PRICE).toLocaleString('es-AR');
-                
-                const message = `Hola! Acabo de reservar los siguientes números para la rifa del Ford Ka:\n\n` +
-                                `🎟️ Números: *[ ${numStrings} ]*\n` +
-                                `👤 Comprador: *${name}*\n` +
-                                `📞 Celular: *${phone}*\n` +
-                                `💰 Total a abonar: *$${total}*\n\n` +
-                                `Por favor, indicame el Alias para transferir los $12.000 por número y enviarte el comprobante. ¡Muchas gracias!`;
-
-                const encodedMessage = encodeURIComponent(message);
-                const finalUrl = `https://wa.me/${WHATSAPP_CONTACT}?text=${encodedMessage}`;
-
-                selectedNumbers = [];
-                updateUI();
-
-                showToast("✅ ¡Reserva registrada con éxito! Abriendo WhatsApp...");
-                
-                setTimeout(() => {
-                    window.open(finalUrl, '_blank');
-                }, 1500);
-
-            } catch (err) {
-                console.error("Error al guardar reserva:", err);
-                showToast("⚠️ Error al registrar tu reserva. Intentá de nuevo.");
-            }
-        };
-
-        // Buscar números
-        const filterNumbers = () => {
-            const input = document.getElementById('search-input');
-            const term = input.value.trim();
-            renderGrid(term);
-        };
-
-        // Acceso administrativo
-        window.askAdminAccess = () => {
-            const password = window.prompt("Ingresá la clave de administrador para gestionar los números (Patente del auto):");
-            if (password === '775') {
-                isAdmin = true;
-                document.getElementById('admin-indicator').classList.remove('hidden');
-                showToast("🔓 Modo Administrador Activado. Elegí cualquier número para cambiar su estado.");
-                renderGrid();
-            } else if (password !== null) {
-                showToast("❌ Clave incorrecta.");
-            }
-        };
-
-        window.openAdminModal = (num) => {
-            activeAdminNum = String(num).padStart(3, '0');
-            document.getElementById('modal-num-title').textContent = activeAdminNum;
-
-            const reservation = ticketReservations[activeAdminNum];
-            if (reservation) {
-                document.getElementById('modal-buyer-name').textContent = reservation.name || "Sin nombre";
-                document.getElementById('modal-buyer-phone').textContent = reservation.phone || "Sin teléfono";
-                document.getElementById('modal-buyer-box').classList.remove('hidden');
-            } else {
-                document.getElementById('modal-buyer-box').classList.add('hidden');
-            }
-
-            document.getElementById('admin-modal').classList.remove('hidden');
-        };
-
-        window.closeAdminModal = () => {
-            document.getElementById('admin-modal').classList.add('hidden');
-            activeAdminNum = null;
-        };
-
-        window.setTicketState = async (newState) => {
-            if (!activeAdminNum) return;
-            if (!user) {
-                showToast("❌ No autenticado.");
-                return;
-            }
-
-            try {
-                const updatedReservations = { ...ticketReservations };
-                if (newState === 'disponible') {
-                    delete updatedReservations[activeAdminNum];
-                } else {
-                    const existing = updatedReservations[activeAdminNum] || {};
-                    updatedReservations[activeAdminNum] = {
-                        status: newState,
-                        name: existing.name || "Administrador",
-                        phone: existing.phone || "N/A",
-                        timestamp: existing.timestamp || Date.now()
-                    };
-                }
-
-                await setDoc(getGlobalStateDocRef(), updatedReservations);
-                showToast(`✅ Número ${activeAdminNum} actualizado.`);
-                closeAdminModal();
-            } catch (err) {
-                console.error("Error actualizando estado:", err);
-                showToast("❌ Error al guardar.");
-            }
-        };
-
-        const showToast = (message) => {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            toastMsg.textContent = message;
+        function goToStep(step) {
+            // Ocultar todos los pasos
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
             
-            toast.classList.remove('opacity-0', 'translate-y-20', 'pointer-events-none');
+            // Mostrar paso actual
+            const nextStepEl = document.getElementById(`q${step}`);
+            if (nextStepEl) {
+                nextStepEl.classList.remove('hidden');
+            }
             
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-20', 'pointer-events-none');
-            }, 3500);
-        };
+            // Actualizar barra de progreso
+            const progress = document.getElementById('quiz-progress');
+            progress.style.width = `${(step / 4) * 100}%`;
+            currentStep = step;
+        }
 
-        // Exportar funciones a ventana global
-        window.setSlide = setSlide;
-        window.filterNumbers = filterNumbers;
-        window.toggleNumber = toggleNumber;
-        window.requestReservation = requestReservation;
+        function submitQuiz() {
+            const nameInput = document.getElementById('client-name');
+            if (!nameInput.value.trim()) {
+                nameInput.classList.add('border-red-500');
+                return;
+            }
+            nameInput.classList.remove('border-red-500');
+            answers.nombre = nameInput.value.trim();
 
-        // Lanzar inicialización de Autenticación primero
-        const startApp = async () => {
-            await initAuth();
-            initTabs();
-            renderGrid();
-        };
-        startApp();
+            // Rellenar pantalla de resultados
+            document.getElementById('display-name').innerText = answers.nombre;
+            document.getElementById('r-sintoma').innerText = answers.sintoma;
+            document.getElementById('r-ejercicio').innerText = answers.ejercicio;
+            document.getElementById('r-sueno').innerText = answers.sueno;
+
+            // Mostrar resultados
+            document.getElementById('q4').classList.add('hidden');
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+            document.getElementById('quiz-progress').style.width = "100%";
+        }
+
+        function sendToWhatsApp() {
+            // Mensaje sumamente persuasivo y personalizado para que se postulen
+            const text = `¡Hola Marina! Soy ${answers.nombre}. Acabo de hacer el Test de Regulación en tu web y quiero postularme a tu asesoría personalizada de 8 semanas. Mis resultados:
+- Siento en mi día a día: ${answers.sintoma}
+- Al entrenar de forma convencional: ${answers.ejercicio}
+- Rumiación / Carga mental: ${answers.sueno}
+¿Me contás cuándo tenés disponibilidad para nuestra videollamada de diagnóstico gratuita?`;
+
+            const encodedText = encodeURIComponent(text);
+            const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodedText}`;
+            window.open(url, '_blank');
+        }
+
+        // --- FAQ ACORDEÓN ---
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
     </script>
 </body>
 </html>
