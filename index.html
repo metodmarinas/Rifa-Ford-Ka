@@ -635,13 +635,13 @@
 
         function sendToWhatsApp() {
             // Mensaje sumamente elegante para el cliente
-            const text = `¡Hola Marina! Mi nombre es ${answers.nombre}. Estuve recorriendo tu web de Método Marinas y completé el Mapa de Tensión Corporal para entender mejor cómo está mi cuerpo hoy. Mis respuestas fueron:
+            const text = `¡Hola Jonathan Mariñas! Mi nombre es ${answers.nombre}. Estuve recorriendo tu web de Método Mariñas y completé el Mapa de Tensión Corporal para entender mejor cómo está mi cuerpo hoy. Mis respuestas fueron:
 
 - Mi energía física al mediodía: ${answers.sintoma}
 - Al pensar en entrenar: ${answers.ejercicio}
 - Estado de mis pensamientos: ${answers.sueno}
 
-Me gustaría coordinar la sesión de admisión gratuita para conocernos y que me cuentes cómo es el proceso de mentoría personalizada uno a uno de 8 semanas.`;
+Me gustaría coordinar para hacer una videollamada gratuita y conocernos, que me cuentes cómo es el proceso de mentoría personalizada uno a uno de 8 semanas.`;
 
             const encodedText = encodeURIComponent(text);
             const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodedText}`;
